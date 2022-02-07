@@ -192,18 +192,28 @@ Thing 1) Computer
  */
 struct Computer
 { 
-/*
-5 properties:
-    1) number of processor cores (int)
-    2) memory In GB (int)
-    3) graphics accelerator (std::string)
-    4) motherboard type (std::string)
-    5) audio interface name (std::string)
-3 things it can do:
-    1) run multiple processes 
-    2) run memtest
-    3) connect to internet
-*/
+
+    //1) number of processor cores (int)
+    int numberOfProcessorCores;
+    //2) memory In GB (int)
+    int memoryInGB;
+    //3) graphics accelerator (std::string)
+    std::string graphicsAccelerator;
+    //4) motherboard type (std::string)
+    std::string motherboardType;
+    //5) audio interface name (std::string)
+    std::string audioInterfaceName;
+
+
+    //1) run multiple processes 
+    void runMultipleProcesses();
+    //2) run memtest
+    void runMemtest();
+
+    //3) connect to internet
+    //return true on connection success
+    bool connectToInternet();
+
 
 };
 /*
@@ -211,35 +221,50 @@ Thing 2) Dog
  */
 struct Dog
 {
-/*
-5 properties:
-    1) hair color (std::string)
-    2) hair length in cm (float)
-    3) number of teeth (int)
-    4) length of tail in cm (float)
-    5) breed (std::string)
-3 things it can do:
-    1) bark
-    2) run
-    3) fetch*/
+
+    //1) hair color (std::string)
+    std::string hairColor;
+    //2) hair length in cm (float)
+    float hairLengthInCM;
+    //3) number of teeth (int)
+    int numberOfTeeth;
+    //4) length of tail in cm (float)
+    float lengthOfTailInCm;
+    //5) breed (std::string)
+    std::string breed;
+
+    //1) bark
+    void bark();
+    //2) run
+    void run();
+    //3) fetch a toy
+    bool fetch(std::string toy); //returns true if the dog fetched the toy
 };
 /*
 Thing 3) Teacher
  */
 struct Teacher
 {
-/*
-5 properties:
-    1) credential type (std::string)
-    2) domain expertise (std::string)
-    3) number of classes taught (int)
-    4) years of tenure (float)
-    5) rating by students (char)
-3 things it can do:
-    1) give lecture
-    2) private tutoring
-    3) assign homework
-*/
+
+    //1) credential type (std::string)
+    std::string credentialType;
+    //2) domain expertise (std::string)
+    std::string domainExpertise;
+    //3) number of classes taught (int)
+    int numberOfClassesTaught;
+    //4) years of tenure (float)
+    float yearsOfTenure;
+    //5) rating by students (char)
+    char ratingByStudents;
+
+    //1) give lecture
+    void giveLecture();
+
+    //2) private tutoring
+    // returns the amount of money made from private tutoring
+    float privateTutoring(float hourlyRate, int numberOfHours = 1); //input hourly rate and number of hours
+    //3) assign homework
+    void assignHomework(std::string homeworkAssignment);//input a string representation of the homework
 
 };
 /*
@@ -247,109 +272,143 @@ Thing 4) Audio Interface
  */
 struct AudioInterface
 {
-/*
-5 properties:
-    1) number of inputs (int)
-    2) number of outputs (int)
-    3) speaker volume level (float)
-    4) color (std::string)
-    5) headphone volume level (float)
-3 things it can do:
-    1) adjust levels
-    2) mute output
-    3) display input levels
-*/
+    //1) number of inputs (int)
+    int numberOfInputs;
+    //2) number of outputs (int)
+    int numberOfOutputs;
+    //3) speaker volume level (float)
+    int float speakerVolumeLevel;
+    //4) color (std::string)
+    std::string color;
+    //5) headphone volume level (float)
+    float headphoneVolumeLevel;
+
+    //1) adjust levels
+    float adjustLevels(float sliderMark); //returns the current level 
+    //2) mute output
+    bool muteOutput();//returns true if mute is on. false otherwise.
+    //3) display input levels on GUI
+    void displayInputLevelsOnGUI(float inputLevel1, float inputLevel2);//input to function is audio line in levels
+
 };
 /*
 Thing 5) Fingerboard
  */
 struct Fingerboard
 {
-/*
-5 properties:
-    1) type of wood (std::string)
-    2) number of frets (int)
-    3) length in cm (float)
-    4) width in cm (float)
-    5) number of inlays (int)
-3 things it can do:
-    1) fret a note
-    2) require oil
-    3) requre new frets
-*/
+
+    //1) type of wood (std::string)
+
+    //2) number of frets (int)
+
+    //3) length in cm (float)
+
+    //4) width in cm (float)
+
+    //5) number of inlays (int)
+
+
+    //1) fret a note
+
+    //2) require oil
+
+    //3) requre new frets
+
 };
 /*
 Thing 6) Tuning
 */
 struct Tuning
 {
-/*
-5 properties:
-    1) string 1 midi tuning (int)
-    2) string 2 midi tuning (int)
-    3) string 3 midi tuning (int)
-    4) string 4 midi tuning (int)
-    5) string 5 midi tuning (int)
-3 things it can do:
-    1) tune string up
-    2) tune string down
-    3) set all string tunings to default
-*/
+    //1) string 1 midi tuning (int)
+
+    //2) string 2 midi tuning (int)
+
+    //3) string 3 midi tuning (int)
+    
+    //4) string 4 midi tuning (int)
+
+    //5) string 5 midi tuning (int)
+
+
+    //1) tune string up
+    
+    //2) tune string down
+
+    //3) set all string tunings to default
+
 };
 /*
 Thing 7) String
  */
 struct String
 {
-/*
-5 properties:
-    1) gauge (int)
-    2) material name (std::string)
-    3) manufacturer name (std::string)
-    4) cost in USD (float)
-    5) timbre description (std::string)
-3 things it can do:
-    1) require retuning
-    2) snap
-    3) become old and dirty
-*/
+    //1) gauge (int)
+
+    //2) material name (std::string)
+
+    //3) manufacturer name (std::string)
+
+    //4) cost in USD (float)
+
+    //5) timbre description (std::string)
+
+
+    //1) require retuning
+
+    //2) snap
+
+    //3) become old and dirty
+
+
 };
 /*
 Thing 8) Pickup
  */
 struct Pickup
 {
-/*
-5 properties:
-    1) type of metal (std::string)
-    2) number of pickups (int)
-    3) timbre discription (std::string)
-    4) is humbucker (bool)
-    5) color (std::string)
-3 things it can do:
-    1) bypass 
-    2) sense flux field
-    3) buck the hum
-*/
+    //1) type of metal (std::string)
+
+    //2) number of pickups (int)
+
+    //3) timbre discription (std::string)
+
+    //4) is humbucker (bool)
+
+    //5) color (std::string)
+
+
+    //1) bypass 
+
+    //2) sense flux field
+
+    //3) buck the hum
+
+
 };
 /*
 Thing 9) Tone Control
  */
 struct ToneControl
 {
-/*
-5 properties:
-    1) front pickup tone control setting (float)
-    2) rear pickup tone control setting  (float)
-    3) knob color (std::string)
-    4) knob material (std::string)
-    5) is smooth to turn (bool)
-3 things it can do:
-    1) set tone level
-    2) require repair
-    3) auto adjust
+    //1) front pickup tone control setting (float)
 
-*/
+    //2) rear pickup tone control setting  (float)
+
+    //3) knob color (std::string)
+
+    //4) knob material (std::string)
+
+    //5) is smooth to turn (bool)
+
+
+    //1) set tone level
+
+    //2) require repair
+
+    //3) auto adjust
+
+
 };
 
 /*
@@ -357,18 +416,24 @@ Thing 10) Guitar
  */
 struct Guitar
 {
-/*
-5 properties:
-    1) Fingerboard 
-    2) Tuning 
-    3) Strings 
-    4) Pickups 
-    5) Tone Control 
-3 things it can do:
-    1) adjust tone
-    2) tune a string
-    3) sound a note
-*/
+
+    //1) Fingerboard 
+
+    //2) Tuning 
+
+    //3) Strings 
+
+    //4) Pickups 
+
+    //5) Tone Control 
+
+
+    //1) adjust tone
+
+    //2) tune a string
+
+    //3) sound a note
+
 };
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
