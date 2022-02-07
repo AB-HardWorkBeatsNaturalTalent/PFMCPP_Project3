@@ -62,14 +62,14 @@ Sub Object 1: Steering Wheel
         
 Sub Object 2: Instrument Cluster
     Name 4 things you'll find on the:   Instrument Cluster
-        1) radio
-        2) air conditioner
-        3) clock
-        4) sat-nav
+        1) windshield wiper control
+        2) window cleaner spray control
+        3) blinker control
+        4) fog light control 
     Name 3 things you can do with the:   Instrument Cluster
-        1) input sat-nav destination
-        2) change clock time
-        3) select radio station
+        1) spray washer fluid
+        2) signal for left turn
+        3) turn on fog lights
     
 Sub Object 3: Environment Controls
     Name 3 things you'll find on the:    Environment Controls
