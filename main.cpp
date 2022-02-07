@@ -189,6 +189,10 @@ struct CarWash //                                   1) define an empty struct fo
 
 /*
 Thing 1) Computer
+ */
+struct Computer
+{ 
+/*
 5 properties:
     1) number of processor cores (int)
     2) memory In GB (int)
@@ -199,13 +203,15 @@ Thing 1) Computer
     1) run multiple processes 
     2) run memtest
     3) connect to internet
- */
-struct Computer
-{
+*/
 
 };
 /*
 Thing 2) Dog 
+ */
+struct Dog
+{
+/*
 5 properties:
     1) hair color (std::string)
     2) hair length in cm (float)
@@ -215,14 +221,14 @@ Thing 2) Dog
 3 things it can do:
     1) bark
     2) run
-    3) fetch
- */
-struct Dog
-{
-
+    3) fetch*/
 };
 /*
 Thing 3) Teacher
+ */
+struct Teacher
+{
+/*
 5 properties:
     1) credential type (std::string)
     2) domain expertise (std::string)
@@ -233,13 +239,15 @@ Thing 3) Teacher
     1) give lecture
     2) private tutoring
     3) assign homework
- */
-struct Teacher
-{
+*/
 
 };
 /*
 Thing 4) Audio Interface
+ */
+struct AudioInterface
+{
+/*
 5 properties:
     1) number of inputs (int)
     2) number of outputs (int)
@@ -250,13 +258,14 @@ Thing 4) Audio Interface
     1) adjust levels
     2) mute output
     3) display input levels
- */
-struct AudioInterface
-{
-
+*/
 };
 /*
 Thing 5) Fingerboard
+ */
+struct Fingerboard
+{
+/*
 5 properties:
     1) type of wood (std::string)
     2) number of frets (int)
@@ -267,13 +276,14 @@ Thing 5) Fingerboard
     1) fret a note
     2) require oil
     3) requre new frets
- */
-struct Fingerboard
-{
-
+*/
 };
 /*
 Thing 6) Tuning
+*/
+struct Tuning
+{
+/*
 5 properties:
     1) string 1 midi tuning (int)
     2) string 2 midi tuning (int)
@@ -284,13 +294,14 @@ Thing 6) Tuning
     1) tune string up
     2) tune string down
     3) set all string tunings to default
- */
-struct Tuning
-{
-
+*/
 };
 /*
 Thing 7) String
+ */
+struct String
+{
+/*
 5 properties:
     1) gauge (int)
     2) material name (std::string)
@@ -301,13 +312,14 @@ Thing 7) String
     1) require retuning
     2) snap
     3) become old and dirty
- */
-struct String
-{
-
+*/
 };
 /*
 Thing 8) Pickup
+ */
+struct Pickup
+{
+/*
 5 properties:
     1) type of metal (std::string)
     2) number of pickups (int)
@@ -318,13 +330,14 @@ Thing 8) Pickup
     1) bypass 
     2) sense flux field
     3) buck the hum
- */
-struct Pickup
-{
-
+*/
 };
 /*
 Thing 9) Tone Control
+ */
+struct ToneControl
+{
+/*
 5 properties:
     1) front pickup tone control setting (float)
     2) rear pickup tone control setting  (float)
@@ -335,14 +348,16 @@ Thing 9) Tone Control
     1) set tone level
     2) require repair
     3) auto adjust
- */
-struct ToneControl
-{
 
+*/
 };
 
 /*
 Thing 10) Guitar
+ */
+struct Guitar
+{
+/*
 5 properties:
     1) Fingerboard 
     2) Tuning 
@@ -353,10 +368,7 @@ Thing 10) Guitar
     1) adjust tone
     2) tune a string
     3) sound a note
- */
-struct Guitar
-{
-
+*/
 };
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
