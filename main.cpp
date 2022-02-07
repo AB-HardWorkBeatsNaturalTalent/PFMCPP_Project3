@@ -342,9 +342,9 @@ struct Tuning
     //sets the Tuning member variables
 };
 /*
-Thing 7) String
+Thing 7) GuitarString
  */
-struct String
+struct GuitarString
 {
     //1) gauge (int)
     int gauge();
@@ -423,21 +423,22 @@ struct Guitar
 {
 
     //1) Fingerboard 
-
+    Fingerboard fingerboard;
     //2) Tuning 
-
-    //3) Strings 
-
-    //4) Pickups 
-
+    Tuning tuning;
+    //3) GuitarString 
+    GuitarString guitarString;
+    //4) Pickup 
+    Pickup pickup;
     //5) Tone Control 
-
+    ToneControl toneControl;
 
     //1) adjust tone
-
+    bool adjustTone(float adjustAmount);//returns true if tone control adjusted the correct amount
     //2) tune a string
-
+    int tuneAString(int toPitch);//input toPitch is the pitch to tune to. return value of pitch
     //3) sound a note
+    void soundANote(int stringNumber, int fretNumber);//play audio through speakers
 
 };
 /*
