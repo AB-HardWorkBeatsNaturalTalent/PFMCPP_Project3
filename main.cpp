@@ -200,7 +200,10 @@ Thing 1) Computer
     2) run memtest
     3) connect to internet
  */
+struct Computer
+{
 
+};
 /*
 Thing 2) Dog 
 5 properties:
@@ -214,7 +217,10 @@ Thing 2) Dog
     2) run
     3) fetch
  */
+struct Dog
+{
 
+};
 /*
 Thing 3) Teacher
 5 properties:
@@ -228,7 +234,10 @@ Thing 3) Teacher
     2) private tutoring
     3) assign homework
  */
+struct Teacher
+{
 
+};
 /*
 Thing 4) Audio Interface
 5 properties:
@@ -242,7 +251,10 @@ Thing 4) Audio Interface
     2) mute output
     3) display input levels
  */
+struct AudioInterface
+{
 
+};
 /*
 Thing 5) Fingerboard
 5 properties:
@@ -256,7 +268,10 @@ Thing 5) Fingerboard
     2) require oil
     3) requre new frets
  */
+struct Fingerboard
+{
 
+};
 /*
 Thing 6) Tuning
 5 properties:
@@ -270,9 +285,12 @@ Thing 6) Tuning
     2) tune string down
     3) set all string tunings to default
  */
+struct Tuning
+{
 
+};
 /*
-Thing 7) Strings
+Thing 7) String
 5 properties:
     1) gauge (int)
     2) material name (std::string)
@@ -284,9 +302,12 @@ Thing 7) Strings
     2) snap
     3) become old and dirty
  */
+struct String
+{
 
+};
 /*
-Thing 8) Pickups
+Thing 8) Pickup
 5 properties:
     1) type of metal (std::string)
     2) number of pickups (int)
@@ -298,7 +319,10 @@ Thing 8) Pickups
     2) sense flux field
     3) buck the hum
  */
+struct Pickup
+{
 
+};
 /*
 Thing 9) Tone Control
 5 properties:
@@ -312,7 +336,10 @@ Thing 9) Tone Control
     2) require repair
     3) auto adjust
  */
+struct ToneControl
+{
 
+};
 
 /*
 Thing 10) Guitar
@@ -327,7 +354,10 @@ Thing 10) Guitar
     2) tune a string
     3) sound a note
  */
+struct Guitar
+{
 
+};
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
