@@ -153,61 +153,6 @@ Part 1b Assignment:
         'int float double bool char std::string'.
 */
 
-/*
-Thing 1) Computer
-5 properties:
-    1) number of processor cores
-    2) memory In GB
-    3) graphics accelerator
-    4) chassis size
-    5) audio interface
-3 things it can do:
-    1) run multiple processes 
-    2) run memtest
-    3) connect to internet
- */
-
-/*
-Thing 2) Dog 
-5 properties:
-    1) hair color
-    2) hair length
-    3) number of teeth
-    4) length of tail
-    5) breed
-3 things it can do:
-    1) bark
-    2) run
-    3) fetch
- */
-
-/*
-Thing 3) Teacher
-5 properties:
-    1) credential type
-    2) domain expertise
-    3) number of classes taught
-    4) years of tenure
-    5) rating by students
-3 things it can do:
-    1) give lecture
-    2) private tutoring
-    3) assign homework
- */
-
-/*
-Thing 4) Audio Interface
-5 properties:
-    1) number of inputs
-    2) number of outputs
-    3) speaker volume level
-    4) meter
-    5) headphone volume level
-3 things it can do:
-    1) adjust levels
-    2) mute output
-    3) display input levels
- */
 
  /*
 Part 1c
@@ -275,19 +220,6 @@ Part 1c assignment:
             brand (std::string)
 */
 
-/*
-Thing 10) Guitar
-5 properties:
-    1) Fingerboard 
-    2) Tuning 
-    3) Strings 
-    4) Pickups 
-    5) Tone Control 
-3 things it can do:
-    1) adjust tone
-    2) tune a string
-    3) play a note
- */
 
 /*
 Part 1d
@@ -375,75 +307,6 @@ each property for UDTs 5 - 9.
             height in cm (int)
 */
 
-/*
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
 /*
 You've just defined 10 UDTs!
@@ -457,6 +320,148 @@ The next thing that will happen is that I will review the
 pseudo-code that you have written.
 Send me a DM to review your pull request when the project is ready for review.
 */
+
+
+/*
+Thing 1) Computer
+5 properties:
+    1) number of processor cores
+    2) memory In GB
+    3) graphics accelerator
+    4) chassis size
+    5) audio interface
+3 things it can do:
+    1) run multiple processes 
+    2) run memtest
+    3) connect to internet
+ */
+
+/*
+Thing 2) Dog 
+5 properties:
+    1) hair color
+    2) hair length
+    3) number of teeth
+    4) length of tail
+    5) breed
+3 things it can do:
+    1) bark
+    2) run
+    3) fetch
+ */
+
+/*
+Thing 3) Teacher
+5 properties:
+    1) credential type
+    2) domain expertise
+    3) number of classes taught
+    4) years of tenure
+    5) rating by students
+3 things it can do:
+    1) give lecture
+    2) private tutoring
+    3) assign homework
+ */
+
+/*
+Thing 4) Audio Interface
+5 properties:
+    1) number of inputs
+    2) number of outputs
+    3) speaker volume level
+    4) meter
+    5) headphone volume level
+3 things it can do:
+    1) adjust levels
+    2) mute output
+    3) display input levels
+ */
+
+/*
+Thing 5) Fingerboard
+5 properties:
+    1) type of wood (std::string)
+    2) number of frets (int)
+    3) length in cm (float)
+    4) width in cm (float)
+    5) number of inlays (int)
+3 things it can do:
+    1) fret a note
+    2) require oil
+    3) requre new frets
+ */
+
+/*
+Thing 6) Tuning
+5 properties:
+    1) string 1 midi tuning (int)
+    2) string 2 midi tuning (int)
+    3) string 3 midi tuning (int)
+    4) string 4 midi tuning (int)
+    5) string 5 midi tuning (int)
+3 things it can do:
+    1) tune string up
+    2) tune string down
+    3) set all string tunings to default
+ */
+
+/*
+Thing 7) Strings
+5 properties:
+    1) gauge (int)
+    2) material name (std::string)
+    3) manufacturer name (std::string)
+    4) cost in USD (float)
+    5) timbre description (std::string)
+3 things it can do:
+    1) require retuning
+    2) snap
+    3) become old and dirty
+ */
+
+/*
+Thing 8) Pickups
+5 properties:
+    1) type of metal (std::string)
+    2) number of pickups (int)
+    3) timbre discription (std::string)
+    4) is humbucker (bool)
+    5) color (std::string)
+3 things it can do:
+    1) bypass 
+    2) sense flux field
+    3) buck the hum
+ */
+
+/*
+Thing 9) Tone Control
+5 properties:
+    1) front pickup tone control setting (float)
+    2) rear pickup tone control setting  (float)
+    3) knob color (std::string)
+    4) knob material (std::string)
+    5) is smooth to turn (bool)
+3 things it can do:
+    1) set tone level
+    2) require repair
+    3) auto adjust
+ */
+
+
+/*
+Thing 10) Guitar
+5 properties:
+    1) Fingerboard 
+    2) Tuning 
+    3) Strings 
+    4) Pickups 
+    5) Tone Control 
+3 things it can do:
+    1) adjust tone
+    2) tune a string
+    3) play a note
+ */
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
