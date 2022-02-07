@@ -298,21 +298,22 @@ struct Fingerboard
 {
 
     //1) type of wood (std::string)
-
+    std::string typeOfWood;
     //2) number of frets (int)
-
+    int numberOfFrets;
     //3) length in cm (float)
-
+    float lengthInCm;
     //4) width in cm (float)
-
+    float widthInCm;
     //5) number of inlays (int)
-
+    int numberOfInlays;
 
     //1) fret a note
-
+    int fretANote(int stringNumber, int fretNumber);//returns midi pitch value of fretted note
     //2) require oil
-
+    std::string requireOil(bool required);//returns a representation of the type of oil, if required
     //3) requre new frets
+    bool requireNewFrets();//returns true if the fretboard requires new frets
 
 };
 /*
