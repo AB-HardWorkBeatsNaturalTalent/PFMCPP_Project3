@@ -322,22 +322,24 @@ Thing 6) Tuning
 struct Tuning
 {
     //1) string 1 midi tuning (int)
-
+    int string1MidiTuning;
     //2) string 2 midi tuning (int)
-
+    int string2MidiTuning;  
     //3) string 3 midi tuning (int)
-    
+    int string3MidiTuning;
     //4) string 4 midi tuning (int)
-
+    int string4MidiTuning;
     //5) string 5 midi tuning (int)
-
+    int string5MidiTuning;
 
     //1) tune string up
-    
+    int tuneStringUp(); //returns pitch of string
     //2) tune string down
-
-    //3) set all string tunings to default
-
+    int tuneStringDown(); //returns pitch of string;
+    //3) set all string tunings
+    void setAllStringTunings(int string1, int string2, int string3, int string4, int string5);
+    //input a midi pitch value for each string
+    //sets the Tuning member variables
 };
 /*
 Thing 7) String
@@ -345,22 +347,22 @@ Thing 7) String
 struct String
 {
     //1) gauge (int)
-
+    int gauge();
     //2) material name (std::string)
-
+    std::string materialName;
     //3) manufacturer name (std::string)
-
+    std::string manufacturerName;
     //4) cost in USD (float)
-
-    //5) timbre description (std::string)
-
+    float costInUSD;
+    //5) is old and dirty (bool)
+    bool isOldAndDirty;
 
     //1) require retuning
-
+    bool requireRetuning();
     //2) snap
-
+    bool snap();
     //3) become old and dirty
-
+    void becomeOldAndDirty();//sets the strings member variable
 
 };
 /*
