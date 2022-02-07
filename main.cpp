@@ -154,59 +154,59 @@ Part 1b Assignment:
 */
 
 /*
-Thing 1)
+Thing 1) Computer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of processor cores
+    2) memory In GB
+    3) graphics accelerator
+    4) chassis size
+    5) audio interface
 3 things it can do:
-    1)
-    2)
-    3)
+    1) run multiple processes 
+    2) run memtest
+    3) connect to internet
  */
 
 /*
-Thing 2)
+Thing 2) Dog 
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) hair color
+    2) hair length
+    3) number of teeth
+    4) length of tail
+    5) breed
 3 things it can do:
-    1)
-    2)
-    3)
+    1) bark
+    2) run
+    3) fetch
  */
 
 /*
-Thing 3)
+Thing 3) Teacher
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) credential type
+    2) domain expertise
+    3) number of classes taught
+    4) years of tenure
+    5) rating by students
 3 things it can do:
-    1)
-    2)
-    3)
+    1) give lecture
+    2) private tutoring
+    3) assign homework
  */
 
 /*
-Thing 4)
+Thing 4) Audio Interface
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of inputs
+    2) number of outputs
+    3) speaker volume level
+    4) meter
+    5) headphone volume level
 3 things it can do:
-    1)
-    2)
-    3)
+    1) adjust levels
+    2) mute output
+    3) display input levels
  */
 
  /*
