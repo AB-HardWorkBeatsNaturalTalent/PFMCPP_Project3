@@ -325,11 +325,11 @@ Send me a DM to review your pull request when the project is ready for review.
 /*
 Thing 1) Computer
 5 properties:
-    1) number of processor cores
-    2) memory In GB
-    3) graphics accelerator
-    4) chassis size
-    5) audio interface
+    1) number of processor cores (int)
+    2) memory In GB (int)
+    3) graphics accelerator (std::string)
+    4) motherboard type (std::string)
+    5) audio interface name (std::string)
 3 things it can do:
     1) run multiple processes 
     2) run memtest
@@ -339,11 +339,11 @@ Thing 1) Computer
 /*
 Thing 2) Dog 
 5 properties:
-    1) hair color
-    2) hair length
-    3) number of teeth
-    4) length of tail
-    5) breed
+    1) hair color (std::string)
+    2) hair length in cm (float)
+    3) number of teeth (int)
+    4) length of tail in cm (float)
+    5) breed (std::string)
 3 things it can do:
     1) bark
     2) run
@@ -353,11 +353,11 @@ Thing 2) Dog
 /*
 Thing 3) Teacher
 5 properties:
-    1) credential type
-    2) domain expertise
-    3) number of classes taught
-    4) years of tenure
-    5) rating by students
+    1) credential type (std::string)
+    2) domain expertise (std::string)
+    3) number of classes taught (int)
+    4) years of tenure (float)
+    5) rating by students (char)
 3 things it can do:
     1) give lecture
     2) private tutoring
@@ -367,11 +367,11 @@ Thing 3) Teacher
 /*
 Thing 4) Audio Interface
 5 properties:
-    1) number of inputs
-    2) number of outputs
-    3) speaker volume level
-    4) meter
-    5) headphone volume level
+    1) number of inputs (int)
+    2) number of outputs (int)
+    3) speaker volume level (float)
+    4) color (std::string)
+    5) headphone volume level (float)
 3 things it can do:
     1) adjust levels
     2) mute output
