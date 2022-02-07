@@ -460,7 +460,7 @@ Thing 10) Guitar
 3 things it can do:
     1) adjust tone
     2) tune a string
-    3) play a note
+    3) sound a note
  */
 
 /*
