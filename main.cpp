@@ -277,7 +277,7 @@ struct AudioInterface
     //2) number of outputs (int)
     int numberOfOutputs;
     //3) speaker volume level (float)
-    int float speakerVolumeLevel;
+    float speakerVolumeLevel;
     //4) color (std::string)
     std::string color;
     //5) headphone volume level (float)
@@ -434,9 +434,10 @@ struct Guitar
     ToneControl toneControl;
 
     //1) adjust tone
-    bool adjustTone(float adjustAmount);//returns true if tone control adjusted the correct amount
+    bool adjustTone(Fingerboard fingerboard, float adjustAmount);//returns true if tone control adjusted the correct amount
     //2) tune a string
-    int tuneAString(int toPitch);//input toPitch is the pitch to tune to. return value of pitch
+    int tuneAString(Tuning tuning, GuitarString guitarString, int toPitch);//input toPitch is the pitch to tune to guitarString to. Also, adjust the tuning to reflect the newly tuned string.
+    // returns the value of pitch of the tuned string
     //3) sound a note
     void soundANote(int stringNumber, int fretNumber);//play audio through speakers
 
