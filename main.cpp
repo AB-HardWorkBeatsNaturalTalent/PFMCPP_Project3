@@ -395,22 +395,24 @@ Thing 9) Tone Control
 struct ToneControl
 {
     //1) front pickup tone control setting (float)
-
+    float frontPickupToneControlSetting;
     //2) rear pickup tone control setting  (float)
-
+    float rearPickupToneControlSetting;
     //3) knob color (std::string)
-
+    std::string knobColor;
     //4) knob material (std::string)
-
+    std::string knobMaterial;
     //5) is smooth to turn (bool)
-
+    bool isSmoothToTurn;
 
     //1) set tone level
+    float setToneLevel(float inputLevel, float adjustment); //apply adjustment to the inputlevel
+    //return the adjusted tone level
 
     //2) require repair
-
+    bool requireRepair();//returns true if the tone control requires repair
     //3) auto adjust
-
+    bool autoAdjust();//returns true if autoAdjust is turned on; else false 
 
 };
 
