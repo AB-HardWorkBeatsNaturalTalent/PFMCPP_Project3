@@ -371,22 +371,22 @@ Thing 8) Pickup
 struct Pickup
 {
     //1) type of metal (std::string)
-
+    std::string typeOfMetal;
     //2) number of pickups (int)
-
+    int numberOfPickups;
     //3) timbre discription (std::string)
-
+    std::string timbreDescription;
     //4) is humbucker (bool)
-
-    //5) color (std::string)
-
+    bool isHumbucker;
+    //5) bypass (bool)
+    bool bypassPickup;
 
     //1) bypass 
-
+    void bypass(bool shouldBypass); //sets bypass member variable
     //2) sense flux field
-
+    float senseFluxField();//returns the value of the fluxfield
     //3) buck the hum
-
+    float buckTheHum(float inputWithHum);//transforms inputWithHum to output with hum bucked.
 
 };
 /*
