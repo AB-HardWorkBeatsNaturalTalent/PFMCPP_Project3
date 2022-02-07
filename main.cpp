@@ -276,17 +276,17 @@ Part 1c assignment:
 */
 
 /*
-Thing 10)
+Thing 10) Guitar
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Fingerboard
+    2) Tuners
+    3) Strings
+    4) Pickups
+    5) ToneControls
 3 things it can do:
-    1)
-    2)
-    3)
+    1) adjust tone
+    2) tune a string
+    3) play a note
  */
 
 /*
