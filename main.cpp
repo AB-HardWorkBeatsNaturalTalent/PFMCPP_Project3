@@ -581,6 +581,42 @@ struct ToneControl
 
 };
 
+    void ToneControl::ToneAlgorithm::setToneColors(int c1, int c2, int c3)
+    {
+        std::cout << "tone color set to " << c1 << ", " << c2 << ", " << c3 << std::endl;
+    }
+
+    bool ToneControl::ToneAlgorithm::setUpperLimit(float upperLimit1)
+    {
+        std::cout << upperLimit1 << std::endl;
+        return true;
+    }
+
+    bool ToneControl::ToneAlgorithm::setLowerLimit(float lowerLimit1)
+    {
+        std::cout << lowerLimit1 << std::endl;
+        return true;
+    }
+
+    float ToneControl::setToneLevel(float input, float adjust)
+    {
+        std::cout << input << " is good" << std::endl;
+        float toReturn = input - adjust;
+        std::cout << (input - adjust) << " is adjusted amount" << std::endl;
+
+        return toReturn;
+    }
+
+    bool ToneControl::requireRepair()
+    {
+        return true;
+    }
+
+    bool ToneControl::autoAdjust()
+    {
+        return true;
+    }
+
 /*
 Thing 10) Guitar
  */
