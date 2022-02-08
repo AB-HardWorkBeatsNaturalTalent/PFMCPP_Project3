@@ -320,7 +320,7 @@ float Teacher::privateTutoring(float hourlyRate, int numberOfHours)
 }
 void Teacher::assignHomework(std::string homeworkAssignment)
 {
-    std::cout << "work assigned" << std::endl;
+    std::cout << homeworkAssignment << " assigned to class" << std::endl;
 }
 
 
@@ -349,7 +349,7 @@ struct AudioInterface
 
 };
 
-float AudioInterface::adjustLevels(float sliderMark)
+float AudioInterface::adjustLevels([[maybe_unused]]float sliderMark)
 {
     return 0.5;
 }
@@ -359,7 +359,8 @@ bool AudioInterface::muteOutput()
 }
 void AudioInterface::displayInputLevelsOnGUI(float inputLevel1, float inputLevel2)
 {
-    std::cout << "displayed levels" << std::endl;
+    float nonsense = inputLevel1 * inputLevel2;
+    std::cout << "displayed levels: " << nonsense << std::endl;
 }
 
 /*
