@@ -348,6 +348,20 @@ struct AudioInterface
     void displayInputLevelsOnGUI(float inputLevel1, float inputLevel2);//input to function is audio line in levels
 
 };
+
+float AudioInterface::adjustLevels(float sliderMark)
+{
+    return 0.5;
+}
+bool AudioInterface::muteOutput()
+{
+    return true;
+}
+void AudioInterface::displayInputLevelsOnGUI(float inputLevel1, float inputLevel2)
+{
+    std::cout << "displayed levels" << std::endl;
+}
+
 /*
 Thing 5) Fingerboard
  */
