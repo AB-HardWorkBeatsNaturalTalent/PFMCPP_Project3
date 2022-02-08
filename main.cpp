@@ -448,7 +448,7 @@ int Tuning::tuneStringDown()
 }
 void Tuning::setAllStringTunings(int string1, int string2, int string3, int string4, int string5)
 {
-    std::cout << "all-tuned to: "<< string1 << ", " << string2 << ", " << string3 << ", "  << string4 << ", " << string5 << std::endl;   
+    std::cout << "all-tuned to: " << string1 << ", " << string2 << ", " << string3 << ", "  << string4 << ", " << string5 << std::endl;   
 }
 
 
@@ -476,6 +476,21 @@ struct GuitarString
     void becomeOldAndDirty();//sets the strings member variable
 
 };
+    bool GuitarString::requireRetuning()
+    {
+        std::cout << "guitar is perpetually out of tune" << std::endl;
+        return true;
+    }
+    bool GuitarString::snap()
+    {
+        return false;
+    }
+    void GuitarString::becomeOldAndDirty()
+    {
+        std::cout << "crusty, grimy, and dark, the string goes dull" << std::endl; 
+    }
+
+
 /*
 Thing 8) Pickup
  */
