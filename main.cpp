@@ -232,11 +232,11 @@ std::string Computer::GraphicsAccelerator::outputCUDAVersionAndCores()
 
 void Computer::runMultipleProcesses()
 {
-
+    //imagine running in parallel
 }
 void Computer::runMemtest()
 {
-
+    //memtest
 }
 bool Computer::updateGraphicsDriver(GraphicsAccelerator gA)
 {
@@ -268,6 +268,21 @@ struct Dog
     //3) fetch a toy
     bool fetch(std::string toy); //returns true if the dog fetched the toy
 };
+
+void Dog::bark()
+{
+    std::cout << "Fido barks" << std::endl;
+}
+void Dog::run()
+{
+    std::cout << "Fido runs" << std::endl;
+}
+bool Dog::fetch(std::string toy)
+{
+    std::cout << "Fido tried to fetch" << toy << "but fell down" << std::endl;
+    return false;
+}
+
 /*
 Thing 3) Teacher
  */
