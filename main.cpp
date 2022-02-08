@@ -412,6 +412,31 @@ Thing 9) Tone Control
  */
 struct ToneControl
 {
+    struct ToneAlgorithm
+    {
+        //1 tone color 1
+        int color1 = 10;
+        //2 tone color 2
+        int color2 = 12;
+        //3 tone color 3
+        int color3 = 14;
+        //4 upper Limit
+        float upperLimit = 1.0f;
+        //5 lower Limit
+        float lowerLimit = 0.0f;
+
+        //1 set tone colors
+        void setToneColors(int color1, int color2, int color3);//input each color to set
+        //2 set upper limit
+        bool setUpperLimit(float upperLimit = 1.0f);
+        //return true if success, else false;
+        //3 set lower limit
+        bool setLowerLimit(float lowerLimit = 0.0f);
+        //return true if success, else false;
+    };
+
+
+
     //1) front pickup tone control setting (float)
     float frontPickupToneControlSetting = 1.0f;
     //2) rear pickup tone control setting  (float)
