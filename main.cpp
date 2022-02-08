@@ -1,462 +1,490 @@
 /*
-Project 3 - Part 1a-d / 5
+Project 3 - Part 1e / 5
 Video:  Chapter 2 Part 5
 User-Defined Types
 
-Create a branch named Part1
+Continue your work on branch Part1
 
-Purpose: The entire purpose of this 5-part project is to get you 
-writing C++ code that compiles and to reinforce the syntax habits 
-that C++ requires.  
-What you create in this project will be used as the basis of 
-Project 5 in C++ Language Fundamentals.
+Purpose: The entire purpose of this 5-part project is to get you writing C++ code that compiles and to 
+reinforce the syntax habits that C++ requires.  
+What you create in this project will be used as the basis of Project 5 in the course.   
 
 ************************
-Part1 purpose:  Learn to write User-Defined Types (UDTs)
+Part1 purpose:  Learn to write UDTs
 
 You are going to write 10 UDTs in project3.  
-Part1 will be broken up into 5 separate steps, all on the same branch.
-    Part 1a: you will learn to think about an object in terms of 
-    its sub-objects.
-    
-    Part 1b: you will write 4 un-related UDTs in plain english.
-    
-    Part 1c: you will write 1 UDT in plain english that will be 
-    made of 5 related sub-objects.
-    
-    Part 1d: you will write plain-english UDTs for the 5 
-    sub-objects that form the UDT defined in Part 1c.
-    
-    Part 1e: you will convert those 10 plain-english UDTs into code 
-    that runs.
+Part1 will be broken up into 5 separate steps
+    Part 1a: you will learn to think about an object in terms of its sub-objects.
+    Part 1b: you will write 4 un-related UDTs in plain english
+    Part 1c: you will write 1 UDT in plain english that will be made of 5 related sub-objects
+    Part 1d: you will write plain-english UDTs for the 5 sub-objects that form the UDT defined in Part 1c
+    Part 1e: you will convert those 10 plain-english UDTs into code that runs.
 ************************
-*/
 
-/*
-Part 1a
-1) Look at the picture of the car interior (Part1a pic.jpg).  
-    It's in the list of files on the left in Replit.
-    Fill in the blanks below which break this car interior down 
-    into sub-objects.
+Convert your 10 Plain-english UDTs into code.
 
-Several sub-objects are listed below that make up this car's interior.
-    you're going to name several things that you'll find on each 
-    subobject.
-    you're going to name several things that each subobject can do.
-    If you've seen "Family Feud", we are going to do what they do 
-    in that show.
+I recommend compiling after finishing each one and making sure it compiles 
+without errors or warnings before moving on to writing the next UDT. 
 
-    A few blanks are filled in for you already.
+1) define an empty struct below your plain-english UDT. i.e.:
 
-Main Object: Car Interior
-Sub Object 1: Steering Wheel
-    Name 4 things you'll find on the:    Steering Wheel
-        1) paddle shifters
-        2) 'cruise control' controls
-        3) 
-        4) 
-    Name 2 things you can do with the:   Steering Wheel
-        1) adjust cruise control settings.
-        2)
-        
-Sub Object 2: Instrument Cluster
-    Name 4 things you'll find on the:   Instrument Cluster
-        1)
-        2)
-        3)
-        4)
-    Name 3 things you can do with the:   Instrument Cluster
-        1)
-        2)
-        3)
-    
-Sub Object 3: Environment Controls
-    Name 3 things you'll find on the:    Environment Controls
-        1)
-        2)
-        3)
-    Name 3 things you can do with the:   Environment Controls
-        1)
-        2)
-        3)
-
-Sub Object 4: Infotainment System
-    Name 3 things you'll find on the:    Infotainment System
-        1)
-        2)
-        3)
-    Name 3 things you can do with the:   Infotainment System
-        1)
-        2)
-        3)
-
-Sub Object 5: Seat 
-    Name 3 things you'll find on the:    Seat
-        1)
-        2)
-        3)
-    Name 2 things you can do with the:   Seat
-        1)
-        2)
-*/
-
-/*
-Part 1b
-Now you have some basic understanding of how to think of an object 
-in terms of its sub-objects.
-
-Next, write 4 un-related UDTs in plain english:
-*/
-/*
- example:  
- 
 Thing: Car Wash   
     5 properties:
         - number of vacuum cleaners
         - number of eco-friendly cleaning supplies
-        - the amount of water used per week.
-        - amount of profit made per week
+        - stores the amount of water used per week.
+        - stores amount of profit made per week
         - number of cars serviced per day
     3 things it can do:
         - wash and wax car
         - charge customer
         - detail the car interior
+ */
 
-    Notice that I did not use "has a vacuum cleaner" or "Has 
-    eco-friendly cleaning supplies" as one of the properties.
+#if false //ignore these #if #endif lines. they're just here to prevent compiler errors.
+struct CarWash
+{
+
+};
+#endif
+/*
+    - Do this for all 10 UDTs
+
+2) Below your plain-english UDT, Copy your 5 properties & 3 actions into the empty struct body.
+    - comment them out.
+    - Do this for all 10 UDTs
     
-    Writing 'has a ___" checks whether or not your object **has the 
-    ability to do something**.
-    Instead, I wrote "number of vacuum cleaners" and "number of 
-    eco-friendly cleaning supplies".  
+3) declare your member variables and member functions underneath each plain-english comment in your struct's body.
+    - give the member variables relevant data types
+    - Do this for all 10 UDTs
+    - if your functions return something other than 'void', add a comment explaining what is being returned.  see the example code below.
+ 
+4) make the function parameter list for those member functions use some of your User-Defined Types
+    - You'll write definitions/implementations for these functions in Project3 Part2
+    - you'll call each of these functions in Project3 part3
+    - Do this for all 10 UDTs
+ 
+5) make 2 of the 10 user-defined types have a nested class.  
+    - this nested class also needs 5 properties and 3 actions.
+    - these nested classes are not considered one of your 10 UDTs.
+    - this nested class must be related to the class it is nested inside
+ 
+6) your 10th UDT's properties should be instances of your #5-#9 UDTs.   
+    - No primitives allowed!
+ 
+7) After you finish defining each type, click the [run] button.  
+    Clear up any errors or warnings as best you can. 
+    if your code produces a [-Wpadded] warning, add '-Wno-padded' to the .replit file with the other compiler flags (-Weverything -Wno-missing-prototypes etc etc)
+ */
+
+/*
+ example:  
+
+Thing: Car Wash   
+    5 properties:
+        - number of vacuum cleaners
+        - number of eco-friendly cleaning supplies
+        - stores the amount of water used per week.
+        - stores amount of profit made per week
+        - number of cars serviced per day
+    3 things it can do:
+        - wash and wax car
+        - charge customer
+        - detail the car interior
+ */
+
+#include <iostream>
+#include <string>
+
+struct CarWash //                                   1) define an empty struct for each of your 10 types.       
+{
+    //number of vacuum cleaners                     2) copied and commented-out plain-english property
+    int numVacuumCleaners = 3; //                   3) member variables with relevant data types.
+    //number of eco-friendly cleaning supplies      
+    int numEcoFriendlyCleaningSupplies = 20;     
+    //stores the amount of water used per week.     
+    float waterUsedPerWeek = 200.f;            
+    //stores amount of profit made per week         
+    float profitPerWeek = 495.95f;               
+    //number of cars serviced per day               
+    int numberOfCarsServiced = 10;               
     
-    These are specific objects or amounts. 
+    struct Car //5)                                 Note that the nested type 'Car' is related to the 'CarWash' 
+    {
+        //2) member variables with relevant data types.  the names are appropriate for the U.D.T.'s purpose.
+        bool isAPickupTruck = false;
+        float gasMileage = 26.2f;        
+        int year = 1985;
+        std::string manufacturer = "Toyota";
+        std::string model = "Corolla";
+
+        //3) a member function whose parameter has a default value.
+        //the parameter name is related to the work the function will perform.
+        void fillTank(double fuelAmountInGallons = 2.0);  
+        void breakDown(std::string failureType, bool requiresTow = false);
+        int getMilesTraveledAnnually(bool includeUberLyftTrips); //3) returns the number of miles traveled
+    };
+
+    //wash and wax car
+    void washAndWaxCar(Car carA); //4) a member function whose parameter is a UDT.
+    //charge customer
+    float chargeCustomer(float discountPercentage); //3) returns the total amount charged.
+    //detail the car interior
+    void detailInterior(Car carB);
     
-    In C++ terms, this means to I want you to avoid using 'bool' 
-    (has a) as a member variable type.
-    Instead, prefer the other primitive types.
+    //5) a member variable whose type is a UDT.
+    Car carBeingServiced;  
 
-    In addition to the usual primitives (covered in Project 2), you 
-    can use 'std::string' to represent strings in this project.
- */
+    /*
+    Pay attention to the member functions that take an instance of 'Car'
+    Notice that there is a member variable of the same type.
 
-/*
-Part 1b Assignment:
-1)  Fill in the 4 UDTs below with a random UDT in plain english.
-    These 4 UDTs do not need to be related.
-        a) For each plain-english UDT, write out 5 traits or 
-        properties and 3 things it can do.
-        b) remember: these properties will eventually become
-        primitives.
-        c) pick properties that can eventually be represented with 
-        'int float double bool char std::string'.
-*/
+    It makes sense to pass a Car to the function 'washAndWaxCar' because car washes service MANY cars
+    However, they only service ONE car at a time.
+    the carBeingServiced's value would change every time you wash and wax the car. 
 
-/*
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
+    I see many students who write code emulating this format, but their usage does not make logical sense.  
+    Consider the following snippet:
 
-/*
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
+    struct SoccerTeam
+    {
+        struct Manager
+        {
+            ...
+        };
 
-/*
-Thing 3)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 4)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
- /*
-Part 1c
-You have just finished practicing writing out a UDT that is has 
-5 properties and can perform 3 actions.  
-
-Now you will write 1 UDT in plain english. 
-
-This UDT will be different than the previous 4 you wrote: It will 
-use UDTs to describe its 5 properties, as opposed to using C++ 
-primitives to describe the 5 properties.
-
-You will define these 5 'property' UDTs in Part 1d.
- */
-
- /*
-Part 1c example:
-    Cell Phone
-
-    A Cell Phone is built using the following 5 UDTs:
-        Display
-        Memory
-        CPU
-        Radio
-        Applications
-
-    A Cell Phone has 3 things it can do:
-        make a call
-        send a text
-        run an application.
-
-    Notice that I did not use "has a display" or "Has memory" or 
-    "has a cpu" as one of the properties of the CellPhone.
+        // train their skills
+        void trainPlayerSkills(Manager managerA);
     
-    Writing 'has a ___" checks whether or not your object **has 
-    the ability to do something**.
-    Instead, I wrote "Display" or "CPU".  These are specific 
-    objects or amounts. 
+        Manager teamManager;
+    };
+
+    It does not make sense to pass in a new Manager whenever you are going to train your team players.
+    Soccer teams have ONE manager.
+
+    a much more relevant usage would be adding a member function that hires a new manager:
+
+    struct SoccerTeam
+    {
+        struct Manager
+        {
+            ...
+        };
+
+        void hireNewManager(Manager newManager);
     
-    In C++ terms, this means to I want you to avoid using 'bool' 
-    (has a) as a member variable type.
-    Instead, prefer the other primitive types.
+        Manager teamManager;
+    };
 
-    When you choose your 5 smaller parts, remember that each of 
-    these 5 Sub Objects will need to be defined with 5 primitive 
-    properties and 3 actions EACH.
+    We can safely assume that the 'Manager' instance that is being passed in will be replacing the current 'teamManager' variable without looking at any other code.
+    This is because the function name and function argument clearly indicate what they are/what they do.
+
+    Your function names and parameter names should make LOGICAL SENSE.
+    Readers of your code should be able to INTUITIVELY understand what your function implementations will do without actually seeing the implementations.
+
+    Keep this in mind when you define your UDTs in this project part.
+    */
+};
+
+
+/*
+Thing 1) Computer
+ */
+struct Computer
+{ 
+    struct GraphicsAccelerator
+    {
+        //number of cuda cores
+        int numberOfCUDACores = 1200;
+        //model name 
+        std::string modelName = "default GPU";
+        //is gsync capable
+        bool isGSyncCapable = true;
+        //price
+        float price = 100.00f;
+        //maximum SLI capability
+        int maxSLICapability = 2;
+
+        //accelerate the graphics
+        void accelerateGraphics();//attempts to run code in parallel
+        //set price of Graphics accelerator
+        bool setPrice(float newPrice = 100.0f);
+        //output cuda version and number of cores
+        std::string outputCUDAVersionAndCores();//returns a string representing the cuda capbility 
+    };
+    //1) number of processor cores (int)
+    int numberOfProcessorCores  = 4;
+    //2) memory In GB (int)
+    int memoryInGB = 16;
+    //3) graphics accelerator (std::string)
+    GraphicsAccelerator graphicsAccelerator;
+    //4) motherboard type (std::string)
+    std::string motherboardType = "ATX";
+    //5) audio interface name (std::string)
+    std::string audioInterfaceName = "Apogee";
+
+    //1) run multiple processes 
+    void runMultipleProcesses();
+    //2) run memtest
+    void runMemtest();
+    //3) update Graphics Driver
+    //return true on connection success
+    bool updateGraphicsDriver(GraphicsAccelerator graphicsAccelerator);
+    //input the graphics accelerator to update drivers for
+    //returns true if driver updated successfully;
+
+};
+/*
+Thing 2) Dog 
+ */
+struct Dog
+{
+
+    //1) hair color (std::string)
+    std::string hairColor = "golden";
+    //2) hair length in cm (float)
+    float hairLengthInCM = 2.034467f;
+    //3) number of teeth (int)
+    int numberOfTeeth = 3;
+    //4) length of tail in cm (float)
+    float lengthOfTailInCm = 2.09f;
+    //5) breed (std::string)
+    std::string breed = "retriever";
+
+    //1) bark
+    void bark();
+    //2) run
+    void run();
+    //3) fetch a toy
+    bool fetch(std::string toy); //returns true if the dog fetched the toy
+};
+/*
+Thing 3) Teacher
+ */
+struct Teacher
+{
+
+    //1) credential type (std::string)
+    std::string credentialType = "no credential";
+    //2) domain expertise (std::string)
+    std::string domainExpertise= "philosophy";
+    //3) number of classes taught (int)
+    int numberOfClassesTaught = 6;
+    //4) years of tenure (float)
+    float yearsOfTenure = 1;
+    //5) rating by students (char)
+    char ratingByStudents  = 'A';
+
+    //1) give lecture
+    void giveLecture();
+
+    //2) private tutoring
+    // returns the amount of money made from private tutoring
+    float privateTutoring(float hourlyRate, int numberOfHours = 1); //input hourly rate and number of hours
+    //3) assign homework
+    void assignHomework(std::string homeworkAssignment);//input a string representation of the homework
+
+};
+/*
+Thing 4) Audio Interface
+ */
+struct AudioInterface
+{
+    //1) number of inputs (int)
+    int numberOfInputs = 2;
+    //2) number of outputs (int)
+    int numberOfOutputs = 2;
+    //3) speaker volume level (float)
+    float speakerVolumeLevel = -6.0;
+    //4) color (std::string)
+    std::string color = "red";
+    //5) headphone volume level (float)
+    float headphoneVolumeLevel = -6.0;
+
+    //1) adjust levels
+    float adjustLevels(float sliderMark); //returns the current level 
+    //2) mute output
+    bool muteOutput();//returns true if mute is on. false otherwise.
+    //3) display input levels on GUI
+    void displayInputLevelsOnGUI(float inputLevel1, float inputLevel2);//input to function is audio line in levels
+
+};
+/*
+Thing 5) Fingerboard
+ */
+struct Fingerboard
+{
+
+    //1) type of wood (std::string)
+    std::string typeOfWood = "bamboo";
+    //2) number of frets (int)
+    int numberOfFrets = 23;
+    //3) length in cm (float)
+    float lengthInCm = 23.04f;
+    //4) width in cm (float)
+    float widthInCm = 6.9f;
+    //5) number of inlays (int)
+    int numberOfInlays = 7;
+
+    //1) fret a note
+    int fretANote(int stringNumber, int fretNumber);//returns midi pitch value of fretted note
+    //2) require oil
+    std::string requireOil(bool required);//returns a representation of the type of oil, if required
+    //3) requre new frets
+    bool requireNewFrets();//returns true if the fretboard requires new frets
+
+};
+/*
+Thing 6) Tuning
 */
-/*
-Part 1c assignment:
-1) Fill in the 10th UDT below.
-    Define an object that is made of 5 sub-objects.
-    These parts will not be defined using Primitives, but instead 
-    will be their own UDTs you'll define in Part 1d.
+struct Tuning
+{
+    //1) string 1 midi tuning (int)
+    int string1MidiTuning = 10;
+    //2) string 2 midi tuning (int)
+    int string2MidiTuning = 15;  
+    //3) string 3 midi tuning (int)
+    int string3MidiTuning = 20;
+    //4) string 4 midi tuning (int)
+    int string4MidiTuning = 25;
+    //5) string 5 midi tuning (int)
+    int string5MidiTuning = 30;
 
-2) write the name of the primitive type you'll be using after each 
-    property in UDTs 1-4:
-    pick properties that can be represented with 
-    'int float double bool char std::string'.
-    example: 
-        Display:
-            Number of Pixels (int)
-            Amount of Power consumed (milliwatt-hours) (float)
-            Brightness (double)
-            area in cm2 (int)
-            brand (std::string)
-*/
-
+    //1) tune string up
+    int tuneStringUp(); //returns pitch of string
+    //2) tune string down
+    int tuneStringDown(); //returns pitch of string;
+    //3) set all string tunings
+    void setAllStringTunings(int string1, int string2, int string3, int string4, int string5);
+    //input a midi pitch value for each string
+    //sets the Tuning member variables
+};
 /*
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+Thing 7) GuitarString
  */
+struct GuitarString
+{
+    //1) gauge (int)
+    int gauge = 14;
+    //2) material name (std::string)
+    std::string materialName = "nylon";
+    //3) manufacturer name (std::string)
+    std::string manufacturerName = "rippity doo";
+    //4) cost in USD (float)
+    float costInUSD = 10.50f;
+    //5) is old and dirty (bool)
+    bool isOldAndDirty = false;
 
+    //1) require retuning
+    bool requireRetuning();
+    //2) snap
+    bool snap();
+    //3) become old and dirty
+    void becomeOldAndDirty();//sets the strings member variable
+
+};
 /*
-Part 1d
-You now know how to define a UDT that is composed of other UDT.
-Now you will learn how to break down those sub-object UDTs into 
-their 5 properties and 3 actions.
-
-The goal of Part 1d is to get you to think about breaking down an 
-object into smaller and smaller objects, until the smallest object 
-is made of up only C++ primitives and std::string. 
-
-Revisiting the previous example:  
-Cell Phone
-
-A Cell Phone is made up of the following 5 properties/sub-objects 
-and 3 actions:
-    Display
-    Memory
-    CPU
-    Radio
-    Applications
-3 actions:
-    make a call
-    send a text
-    run an application.
-
-These 5 properties can be broken down into their own sub-objects 
-and properties. 
-
-If we break down the first property 'Display' into its 5 properties 
-we get:
-    brightness
-    amount of power consumed.
-    pixels
-    width in cm
-    height in cm
-
-the Display's brightness can be represented with a Primitive, 
-such as a double. 
-
-The amount of power consumed can also be represented with a 
-Primitive, such as a float or integer (i.e. 250mWa)
-
-The 'pixels' property must be represented with an array of Pixel 
-instances, as the screen has more than 1 row of pixels.
-    Arrays have not been discussed and can't be used in this 
-    project.
-    Instead, we can use an Integer primitive to store the 
-    Number of Pixels:
-
-Display:
-    Number of Pixels
-    Amount of Power consumed (milliwatt-hours)
-    Brightness
-    width in cm
-    height in cm
-
-As you can see, the 'Display' UDT has been broken down to the 
-point of being able to describe it with C++ primitives. 
-*/
-
-/*
-Part 1d assignment:
-1) Fill in #5 - #9 below with plain-english UDTs for the 5 
-properties you created for UDT #10. 
-    example: 
-        If #10's first property was 'Engine', then `Thing 5)` 
-        will be `Engine`. 
-        You will need to provide 5 properties and 3 member 
-        functions of that Engine object in plain English.
-        Remember to pick properties that can be represented 
-        with 'int float double bool char std::string'.
-
-2) write the name of the primitive type you'll be using after 
-each property for UDTs 5 - 9.
-    You already did this for UDTs 1-4 in Part 1c.
-    Pick properties that can be represented with 
-    'int float double bool char std::string'
-    example: 
-        Display:
-            Number of Pixels (int)
-            Amount of Power consumed (milliwatt-hours) (float)
-            Brightness (double)
-            width in cm (int)
-            height in cm (int)
-*/
-
-/*
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+Thing 8) Pickup
  */
+struct Pickup
+{
+    //1) type of metal (std::string)
+    std::string typeOfMetal = "gold";
+    //2) number of pickups (int)
+    int numberOfPickups = 2;
+    //3) timbre discription (std::string)
+    std::string timbreDescription = "warm";
+    //4) is humbucker (bool)
+    bool isHumbucker = false;
+    //5) bypass (bool)
+    bool bypassPickup = false;
 
+    //1) bypass 
+    void bypass(bool shouldBypass); //sets bypass member variable
+    //2) sense flux field
+    float senseFluxField();//returns the value of the fluxfield
+    //3) buck the hum
+    float buckTheHum(float inputWithHum);//transforms inputWithHum to output with hum bucked.
+
+};
 /*
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+Thing 9) Tone Control
  */
+struct ToneControl
+{
+    struct ToneAlgorithm
+    {
+        //1 tone color 1
+        int color1 = 10;
+        //2 tone color 2
+        int color2 = 12;
+        //3 tone color 3
+        int color3 = 14;
+        //4 upper Limit
+        float upperLimit = 1.0f;
+        //5 lower Limit
+        float lowerLimit = 0.0f;
+
+        //1 set tone colors
+        void setToneColors(int color1, int color2, int color3);//input each color to set
+        //2 set upper limit
+        bool setUpperLimit(float upperLimit = 1.0f);
+        //return true if success, else false;
+        //3 set lower limit
+        bool setLowerLimit(float lowerLimit = 0.0f);
+        //return true if success, else false;
+    };
+
+
+
+    //1) front pickup tone control setting (float)
+    float frontPickupToneControlSetting = 1.0f;
+    //2) rear pickup tone control setting  (float)
+    float rearPickupToneControlSetting = 1.0f;
+    //3) knob color (std::string)
+    std::string knobColor = "silver";
+    //4) knob material (std::string)
+    std::string knobMaterial = "plastic";
+    //5) is smooth to turn (bool)
+    bool isSmoothToTurn = true;
+
+    //1) set tone level
+    float setToneLevel(float inputLevel, float adjustment); //apply adjustment to the inputlevel
+    //return the adjusted tone level
+
+    //2) require repair
+    bool requireRepair();//returns true if the tone control requires repair
+    //3) auto adjust
+    bool autoAdjust();//returns true if autoAdjust is turned on; else false 
+
+};
 
 /*
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+Thing 10) Guitar
  */
+struct Guitar
+{
 
-/*
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
+    //1) Fingerboard 
+    Fingerboard fingerboard;
+    //2) Tuning 
+    Tuning tuning;
+    //3) GuitarString 
+    GuitarString guitarString;
+    //4) Pickup 
+    Pickup pickup;
+    //5) Tone Control 
+    ToneControl toneControl;
 
-/*
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
+    //1) adjust tone
+    bool adjustTone(Fingerboard fingerboard, float adjustAmount);//returns true if tone control adjusted the correct amount
+    //2) tune a string
+    int tuneAString(Tuning tuning, GuitarString guitarString, int toPitch);//input toPitch is the pitch to tune to guitarString to. Also, adjust the tuning to reflect the newly tuned string.
+    // returns the value of pitch of the tuned string
+    //3) sound a note
+    void soundANote(int stringNumber, int fretNumber);//play audio through speakers
 
-/*
-You've just defined 10 UDTs!
-4 of them are unrelated (UDTs 1-4).
-5 of them form the sub-objects that make up the 10th UDT. 
-
-Move them below this block comment and put them in numerical order 
-(1 - 10).
-
-The next thing that will happen is that I will review the 
-pseudo-code that you have written.
-Send me a DM to review your pull request when the project is ready for review.
-*/
-
+};
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
