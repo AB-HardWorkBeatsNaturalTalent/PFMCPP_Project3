@@ -435,6 +435,23 @@ struct Tuning
     //input a midi pitch value for each string
     //sets the Tuning member variables
 };
+
+int Tuning::tuneStringUp()
+{
+    std::cout << "up-tuned" << std::endl;
+    return 100;
+}
+int Tuning::tuneStringDown()
+{
+    std::cout << "down-tuned" << std::endl;
+    return 0;
+}
+void Tuning::setAllStringTunings(int string1, int string2, int string3, int string4, int string5)
+{
+    std::cout << "all-tuned to: "<< string1 << ", " << string2 << ", " << string3 << ", "  << string4 << ", " << string5 << std::endl;   
+}
+
+
 /*
 Thing 7) GuitarString
  */
