@@ -192,13 +192,20 @@ Thing 1) Computer
  */
 struct Computer
 { 
-
+    struct GraphicsAccelerator
+    {
+        int numberOfCUDACores = 1200;
+        std::string modelName = "default GPU";
+        bool isGSyncCapable = true;
+        float price = 100.00f;
+        int maxSLICapability = 2;
+    };
     //1) number of processor cores (int)
     int numberOfProcessorCores;
     //2) memory In GB (int)
     int memoryInGB;
     //3) graphics accelerator (std::string)
-    std::string graphicsAccelerator;
+    GraphicsAccelerator graphicsAccelerator;
     //4) motherboard type (std::string)
     std::string motherboardType;
     //5) audio interface name (std::string)
@@ -209,11 +216,11 @@ struct Computer
     void runMultipleProcesses();
     //2) run memtest
     void runMemtest();
-
-    //3) connect to internet
+    //3) update Graphics Driver
     //return true on connection success
-    bool connectToInternet();
-
+    bool updateGraphicsDriver(GraphicsAccelerator graphicsAccelerator);
+    //input the graphics accelerator to update drivers for
+    //returns true if driver updated successfully;
 
 };
 /*
