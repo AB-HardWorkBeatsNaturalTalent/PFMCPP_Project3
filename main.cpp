@@ -140,7 +140,7 @@ struct Person
 };
 
 //defining outside of type declaration requires fully qualified name.
-void Person::run( int howFast, bool startWithLeftFoot)
+void Person::run( [[maybe_unused]]int howFast, bool startWithLeftFoot)
 {
     if(startWithLeftFoot)
     {
@@ -153,7 +153,6 @@ void Person::run( int howFast, bool startWithLeftFoot)
         leftFoot.stepForward();
     }
         distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize();
-
 }
 
  /*
@@ -195,6 +194,7 @@ struct Computer
         //output cuda version and number of cores
         std::string outputCUDAVersionAndCores();//returns a string representing the cuda capbility 
     };
+
     //1) number of processor cores (int)
     int numberOfProcessorCores  = 4;
     //2) memory In GB (int)
@@ -217,6 +217,33 @@ struct Computer
     //returns true if driver updated successfully;
 
 };
+void Computer::GraphicsAccelerator::accelerateGraphics()
+{
+    //do nothing
+}
+bool Computer::GraphicsAccelerator::setPrice([[maybe_unused]]float toPrice)
+{
+    return false;
+}
+std::string Computer::GraphicsAccelerator::outputCUDAVersionAndCores()
+{
+    return "hello world";
+}
+
+void Computer::runMultipleProcesses()
+{
+
+}
+void Computer::runMemtest()
+{
+
+}
+bool Computer::updateGraphicsDriver(GraphicsAccelerator gA)
+{
+    std::string throwAway = gA.outputCUDAVersionAndCores();  
+    return true;
+}
+
 /*
 Thing 2) Dog 
  */
