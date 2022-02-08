@@ -201,16 +201,15 @@ struct Computer
         int maxSLICapability = 2;
     };
     //1) number of processor cores (int)
-    int numberOfProcessorCores;
+    int numberOfProcessorCores  = 4;
     //2) memory In GB (int)
-    int memoryInGB;
+    int memoryInGB = 16;
     //3) graphics accelerator (std::string)
     GraphicsAccelerator graphicsAccelerator;
     //4) motherboard type (std::string)
-    std::string motherboardType;
+    std::string motherboardType = "ATX";
     //5) audio interface name (std::string)
-    std::string audioInterfaceName;
-
+    std::string audioInterfaceName = "Apogee";
 
     //1) run multiple processes 
     void runMultipleProcesses();
@@ -230,15 +229,15 @@ struct Dog
 {
 
     //1) hair color (std::string)
-    std::string hairColor;
+    std::string hairColor = "golden";
     //2) hair length in cm (float)
-    float hairLengthInCM;
+    float hairLengthInCM = 2.034467f;
     //3) number of teeth (int)
-    int numberOfTeeth;
+    int numberOfTeeth = 3;
     //4) length of tail in cm (float)
-    float lengthOfTailInCm;
+    float lengthOfTailInCm = 2.09f;
     //5) breed (std::string)
-    std::string breed;
+    std::string breed = "retriever";
 
     //1) bark
     void bark();
