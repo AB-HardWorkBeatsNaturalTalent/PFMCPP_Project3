@@ -643,6 +643,26 @@ struct Guitar
     void soundANote(int stringNumber, int fretNumber);//play audio through speakers
 
 };
+
+    bool Guitar::adjustTone(Fingerboard fb, float adj)
+    {
+        std::cout << "adjust tone by: " << adj << std::endl; 
+        return fb.requireNewFrets();
+    }
+    int Guitar::tuneAString(Tuning t, GuitarString gs, int pitch)
+    {
+        if(gs.requireRetuning())
+        {
+            std::cout << "nice guitar string: " << std::endl;
+        }       
+        return t.tuneStringUp() * pitch / 2;
+    }
+    void Guitar::soundANote(int whichString, int whichFret)
+    {
+        std::cout << "string " << whichString << " sounds good" << "at fret " << whichFret << std::endl;
+    }
+
+
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
