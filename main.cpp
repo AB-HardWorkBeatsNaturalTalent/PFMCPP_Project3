@@ -515,6 +515,20 @@ struct Pickup
     float buckTheHum(float inputWithHum);//transforms inputWithHum to output with hum bucked.
 
 };
+
+    void Pickup::bypass([[maybe_unused]]bool shouldBypass)
+    {
+        std::cout << "never bypass a great opportunity" << std::endl;
+    }
+    float Pickup::senseFluxField()
+    {
+        return 3.14159f;
+    }
+    float Pickup::buckTheHum(float inputWithHum)
+    {
+        return inputWithHum / 2.0f;
+    }
+
 /*
 Thing 9) Tone Control
  */
