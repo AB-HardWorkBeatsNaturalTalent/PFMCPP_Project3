@@ -388,6 +388,28 @@ struct Fingerboard
     bool requireNewFrets();//returns true if the fretboard requires new frets
 
 };
+
+int Fingerboard::fretANote(int stringNumber, int fretNumber)
+{
+    return stringNumber + fretNumber + 9000;
+}
+std::string Fingerboard::requireOil(bool required)
+{
+    if(required)
+    {
+        return "yes";
+    }
+    else
+    {
+        return "no";
+    }
+}
+bool Fingerboard::requireNewFrets()
+{
+    return false;
+}
+
+
 /*
 Thing 6) Tuning
 */
