@@ -194,11 +194,23 @@ struct Computer
 { 
     struct GraphicsAccelerator
     {
+        //number of cuda cores
         int numberOfCUDACores = 1200;
+        //model name 
         std::string modelName = "default GPU";
+        //is gsync capable
         bool isGSyncCapable = true;
+        //price
         float price = 100.00f;
+        //maximum SLI capability
         int maxSLICapability = 2;
+
+        //accelerate the graphics
+        void accelerateGraphics();//attempts to run code in parallel
+        //set price of Graphics accelerator
+        bool setPrice(float newPrice = 100.0f);
+        //output cuda version and number of cores
+        std::string outputCUDAVersionAndCores();//returns a string representing the cuda capbility 
     };
     //1) number of processor cores (int)
     int numberOfProcessorCores  = 4;
@@ -253,15 +265,15 @@ struct Teacher
 {
 
     //1) credential type (std::string)
-    std::string credentialType;
+    std::string credentialType = "no credential";
     //2) domain expertise (std::string)
-    std::string domainExpertise;
+    std::string domainExpertise= "philosophy";
     //3) number of classes taught (int)
-    int numberOfClassesTaught;
+    int numberOfClassesTaught = 6;
     //4) years of tenure (float)
-    float yearsOfTenure;
+    float yearsOfTenure = 1;
     //5) rating by students (char)
-    char ratingByStudents;
+    char ratingByStudents  = 'A';
 
     //1) give lecture
     void giveLecture();
@@ -279,15 +291,15 @@ Thing 4) Audio Interface
 struct AudioInterface
 {
     //1) number of inputs (int)
-    int numberOfInputs;
+    int numberOfInputs = 2;
     //2) number of outputs (int)
-    int numberOfOutputs;
+    int numberOfOutputs = 2;
     //3) speaker volume level (float)
-    float speakerVolumeLevel;
+    float speakerVolumeLevel = -6.0;
     //4) color (std::string)
-    std::string color;
+    std::string color = "red";
     //5) headphone volume level (float)
-    float headphoneVolumeLevel;
+    float headphoneVolumeLevel = -6.0;
 
     //1) adjust levels
     float adjustLevels(float sliderMark); //returns the current level 
@@ -304,15 +316,15 @@ struct Fingerboard
 {
 
     //1) type of wood (std::string)
-    std::string typeOfWood;
+    std::string typeOfWood = "bamboo";
     //2) number of frets (int)
-    int numberOfFrets;
+    int numberOfFrets = 23;
     //3) length in cm (float)
-    float lengthInCm;
+    float lengthInCm = 23.04f;
     //4) width in cm (float)
-    float widthInCm;
+    float widthInCm = 6.9f;
     //5) number of inlays (int)
-    int numberOfInlays;
+    int numberOfInlays = 7;
 
     //1) fret a note
     int fretANote(int stringNumber, int fretNumber);//returns midi pitch value of fretted note
@@ -328,15 +340,15 @@ Thing 6) Tuning
 struct Tuning
 {
     //1) string 1 midi tuning (int)
-    int string1MidiTuning;
+    int string1MidiTuning = 10;
     //2) string 2 midi tuning (int)
-    int string2MidiTuning;  
+    int string2MidiTuning = 15;  
     //3) string 3 midi tuning (int)
-    int string3MidiTuning;
+    int string3MidiTuning = 20;
     //4) string 4 midi tuning (int)
-    int string4MidiTuning;
+    int string4MidiTuning = 25;
     //5) string 5 midi tuning (int)
-    int string5MidiTuning;
+    int string5MidiTuning = 30;
 
     //1) tune string up
     int tuneStringUp(); //returns pitch of string
@@ -353,15 +365,15 @@ Thing 7) GuitarString
 struct GuitarString
 {
     //1) gauge (int)
-    int gauge();
+    int gauge = 14;
     //2) material name (std::string)
-    std::string materialName;
+    std::string materialName = "nylon";
     //3) manufacturer name (std::string)
-    std::string manufacturerName;
+    std::string manufacturerName = "rippity doo";
     //4) cost in USD (float)
-    float costInUSD;
+    float costInUSD = 10.50f;
     //5) is old and dirty (bool)
-    bool isOldAndDirty;
+    bool isOldAndDirty = false;
 
     //1) require retuning
     bool requireRetuning();
@@ -377,15 +389,15 @@ Thing 8) Pickup
 struct Pickup
 {
     //1) type of metal (std::string)
-    std::string typeOfMetal;
+    std::string typeOfMetal = "gold";
     //2) number of pickups (int)
-    int numberOfPickups;
+    int numberOfPickups = 2;
     //3) timbre discription (std::string)
-    std::string timbreDescription;
+    std::string timbreDescription = "warm";
     //4) is humbucker (bool)
-    bool isHumbucker;
+    bool isHumbucker = false;
     //5) bypass (bool)
-    bool bypassPickup;
+    bool bypassPickup = false;
 
     //1) bypass 
     void bypass(bool shouldBypass); //sets bypass member variable
@@ -401,15 +413,15 @@ Thing 9) Tone Control
 struct ToneControl
 {
     //1) front pickup tone control setting (float)
-    float frontPickupToneControlSetting;
+    float frontPickupToneControlSetting = 1.0f;
     //2) rear pickup tone control setting  (float)
-    float rearPickupToneControlSetting;
+    float rearPickupToneControlSetting = 1.0f;
     //3) knob color (std::string)
-    std::string knobColor;
+    std::string knobColor = "silver";
     //4) knob material (std::string)
-    std::string knobMaterial;
+    std::string knobMaterial = "plastic";
     //5) is smooth to turn (bool)
-    bool isSmoothToTurn;
+    bool isSmoothToTurn = true;
 
     //1) set tone level
     float setToneLevel(float inputLevel, float adjustment); //apply adjustment to the inputlevel
