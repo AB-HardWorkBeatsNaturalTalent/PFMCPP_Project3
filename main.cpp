@@ -308,8 +308,22 @@ struct Teacher
     float privateTutoring(float hourlyRate, int numberOfHours = 1); //input hourly rate and number of hours
     //3) assign homework
     void assignHomework(std::string homeworkAssignment);//input a string representation of the homework
-
 };
+
+void Teacher::giveLecture()
+{
+
+}
+float Teacher::privateTutoring(float hourlyRate, int numberOfHours)
+{
+    return hourlyRate * numberOfHours;
+}
+void Teacher::assignHomework(std::string homeworkAssignment)
+{
+    std::cout << "work assigned" << std::endl;
+}
+
+
 /*
 Thing 4) Audio Interface
  */
