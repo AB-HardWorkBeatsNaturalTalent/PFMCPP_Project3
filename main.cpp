@@ -679,39 +679,40 @@ int main()
 //Pickup methods
     auto pickup = Pickup();
     pickup.bypass(true);
-    pickup.buckTheHum(23.9f);
-    pickup.senseFluxField();
-    
+    pickup.buckTheHum(23.9f);    
+    std::cout << "fluxfield is: "  << pickup.senseFluxField() << std::endl;
+
 
 //Tuning methods
     auto tuning = Tuning();
     tuning.setAllStringTunings(1, 3, 5, 7, 9);
-    tuning.tuneStringUp();
     tuning.tuneStringDown();
+    std::cout << "up-tuned string pitch" << tuning.tuneStringUp() << std::endl;
 
 //GuitarString methods
     auto guitarString = GuitarString();
     guitarString.becomeOldAndDirty();
-    guitarString.requireRetuning();
-    guitarString.snap();
+    guitarString.requireRetuning();    
+    std::cout << "did it snap: " << guitarString.snap() << std::endl;
+
 
 //ToneControl methods
     auto toneControl = ToneControl();  
     toneControl.setToneLevel(3.9f, 2.0f);
-    toneControl.autoAdjust();
     toneControl.requireRepair();
+    std::cout << "auto adjusted tone: "  << toneControl.autoAdjust() << std::endl;
 
 //ToneAlgorithm methods
     auto toneAlgorithm = ToneControl::ToneAlgorithm();
     toneAlgorithm.setUpperLimit(1.09f);
-    toneAlgorithm.setLowerLimit(.02f);
     toneAlgorithm.setToneColors(1, 2, 3);
+    std::cout << "lower limit set to:" << toneAlgorithm.setLowerLimit(.02f) << std::endl;
 
 //Guitar methods
     auto guitar = Guitar();
     guitar.soundANote(3, 9);
-    guitar.adjustTone(fingerboard, 1.09f);
     guitar.tuneAString(tuning, guitarString, 12);
-    
+    std::cout << "guitar tone adjusted" << guitar.adjustTone(fingerboard, 1.09f) << std::endl;
+
     std::cout << "good to go!" << std::endl;
 }
