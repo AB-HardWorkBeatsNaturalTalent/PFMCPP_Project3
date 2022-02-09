@@ -136,23 +136,18 @@ struct Person
     Foot leftFoot;
     Foot rightFoot;
 
-    void run(int howFast, bool startWithLeftFoot);
+    int run(int howFast, bool startWithLeftFoot);
 };
 
 //defining outside of type declaration requires fully qualified name.
-void Person::run( [[maybe_unused]]int howFast, bool startWithLeftFoot)
+int Person::run( [[maybe_unused]]int howFast, bool startWithLeftFoot)
 {
     if(startWithLeftFoot)
     {
-        leftFoot.stepForward();
-        rightFoot.stepForward();
+        return distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize();
     }
-    else
-    {
-        rightFoot.stepForward();
-        leftFoot.stepForward();
-    }
-        distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize();
+    return distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize();   
+        
 }
 
  /*
