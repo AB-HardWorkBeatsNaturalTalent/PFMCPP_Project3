@@ -307,6 +307,7 @@ struct Fingerboard
     //5) number of inlays (int)
     int numberOfInlays = 7;
 
+    Fingerboard();
     //1) fret a note
     int fretANote(int stringNumber, int fretNumber);//returns midi pitch value of fretted note
     //2) require oil
@@ -316,6 +317,10 @@ struct Fingerboard
 
 };
 
+Fingerboard::Fingerboard()
+{
+    std::cout << "Fingerboard being constructed" << std::endl;
+}
 int Fingerboard::fretANote(int stringNumber, int fretNumber)
 {
     return stringNumber + fretNumber + 9000;
@@ -347,6 +352,7 @@ struct Tuning
     //5) string 5 midi tuning (int)
     int string5MidiTuning = 30;
 
+    Tuning();
     //1) tune string up
     int tuneStringUp(); //returns pitch of string
     //2) tune string down
@@ -356,7 +362,10 @@ struct Tuning
     //input a midi pitch value for each string
     //sets the Tuning member variables
 };
-
+Tuning::Tuning()
+{
+    std::cout << "Tuning constructed" << std::endl;
+}
 int Tuning::tuneStringUp()
 {
     std::cout << "up-tuned" << std::endl;
@@ -389,6 +398,7 @@ struct GuitarString
     //5) is old and dirty (bool)
     bool isOldAndDirty = false;
 
+    GuitarString();
     //1) require retuning
     bool requireRetuning();
     //2) snap
@@ -397,6 +407,10 @@ struct GuitarString
     void becomeOldAndDirty();//sets the strings member variable
 
 };
+GuitarString::GuitarString()
+{
+    std::cout << "GuitarString being constrcuted" << std::endl;
+}
 bool GuitarString::requireRetuning()
 {
     std::cout << "guitar is perpetually out of tune" << std::endl;
@@ -428,6 +442,7 @@ struct Pickup
     //5) bypass (bool)
     bool bypassPickup = false;
 
+    Pickup();
     //1) bypass 
     void bypass(bool shouldBypass); //sets bypass member variable
     //2) sense flux field
@@ -436,7 +451,10 @@ struct Pickup
     float buckTheHum(float inputWithHum);//transforms inputWithHum to output with hum bucked.
 
 };
-
+Pickup::Pickup()
+{
+    std::cout << "Pickup construced" << std::endl;
+}
 void Pickup::bypass([[maybe_unused]]bool shouldBypass)
 {
     std::cout << "never bypass a great opportunity" << std::endl;
@@ -468,6 +486,7 @@ struct ToneControl
         //5 lower Limit
         float lowerLimit = 0.0f;
 
+        ToneAlgorithm();
         //1 set tone colors
         void setToneColors(int color1, int color2, int color3);//input each color to set
         //2 set upper limit
@@ -491,6 +510,7 @@ struct ToneControl
     //5) is smooth to turn (bool)
     bool isSmoothToTurn = true;
 
+    ToneControl();
     //1) set tone level
     float setToneLevel(float inputLevel, float adjustment); //apply adjustment to the inputlevel
     //return the adjusted tone level
@@ -501,7 +521,14 @@ struct ToneControl
     bool autoAdjust();//returns true if autoAdjust is turned on; else false 
 
 };
-
+ToneControl::ToneControl()
+{
+    std::cout << "ToneControl being constructed" << std::endl;
+}
+ToneControl::ToneAlgorithm::ToneAlgorithm()
+{
+    std::cout << "ToneAlgorithm constructing" << std::endl;
+}
 void ToneControl::ToneAlgorithm::setToneColors(int c1, int c2, int c3)
 {
     std::cout << "tone color set to " << c1 << ", " << c2 << ", " << c3 << std::endl;
@@ -555,6 +582,7 @@ struct Guitar
     //5) Tone Control 
     ToneControl toneControl;
 
+    Guitar();
     //1) adjust tone
     bool adjustTone(Fingerboard fingerboard, float adjustAmount);//returns true if tone control adjusted the correct amount
     //2) tune a string
@@ -565,6 +593,10 @@ struct Guitar
 
 };
 
+Guitar::Guitar()
+{
+    std::cout << "Guitar being constructed" << std::endl;
+}
 bool Guitar::adjustTone(Fingerboard fb, float adj)
 {
     std::cout << "adjust tone by: " << adj << std::endl; 
