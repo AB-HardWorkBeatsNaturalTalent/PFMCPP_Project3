@@ -638,17 +638,43 @@ int main()
 {
     Example::main();
 
+//Computer methods
     Computer computer = Computer();
+    computer.updateGraphicsDriver(Computer::GraphicsAccelerator gA);
+    computer.runMemtest();
+    computer.runMultipleProcesses();
+
+//GraphicsAccelerator methods
     Computer::GraphicsAccelerator computerGraphicsAccelerator = Computer::GraphicsAccelerator();
+
+//Dog methods
     Dog dog = Dog();
+
+//Teacher methods
     Teacher teacher = Teacher();
+
+//AudioInterface methods
     AudioInterface audioInterface = AudioInterface();
+
+//Fingerboard methods
     Fingerboard fingerboard = Fingerboard();
+
+//Pickup methods
     Pickup pickup = Pickup();
+
+//Tuning methods
     Tuning tuning = Tuning();
+
+//GuitarString methods
     GuitarString guitarString = GuitarString();
+
+//ToneControl methods
     ToneControl toneControl = ToneControl();  
+
+//ToneAlgorithm methods
     ToneControl::ToneAlgorithm toneAlgorithm = ToneControl::ToneAlgorithm();
+
+//Guitar methods
     Guitar guitar = Guitar();
     
     std::cout << "good to go!" << std::endl;
