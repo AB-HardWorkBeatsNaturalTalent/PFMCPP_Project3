@@ -173,6 +173,7 @@ struct Dog
     //5) breed (std::string)
     std::string breed = "retriever";
 
+    Dog();
     //1) bark
     void bark();
     //2) run
@@ -180,6 +181,11 @@ struct Dog
     //3) fetch a toy
     bool fetch(std::string toy); //returns true if the dog fetched the toy
 };
+
+Dog::Dog()
+{
+    std::cout <<"Dog being constructed" << std::endl;
+}
 
 void Dog::bark()
 {
@@ -212,6 +218,7 @@ struct Teacher
     //5) rating by students (char)
     char ratingByStudents  = 'A';
 
+    Teacher();
     //1) give lecture
     void giveLecture();
 
@@ -222,6 +229,10 @@ struct Teacher
     void assignHomework(std::string homeworkAssignment);//input a string representation of the homework
 };
 
+Teacher::Teacher()
+{
+    std::cout << "Teacher being constructed" << std::endl;
+}
 void Teacher::giveLecture()
 {
 
@@ -252,6 +263,7 @@ struct AudioInterface
     //5) headphone volume level (float)
     float headphoneVolumeLevel = -6.0;
 
+    AudioInterface();
     //1) adjust levels
     float adjustLevels(float sliderMark); //returns the current level 
     //2) mute output
@@ -260,7 +272,10 @@ struct AudioInterface
     void displayInputLevelsOnGUI(float inputLevel1, float inputLevel2);//input to function is audio line in levels
 
 };
-
+AudioInterface::AudioInterface()
+{
+    std::cout << "AudioInterface constructed" << std::endl;
+}
 float AudioInterface::adjustLevels([[maybe_unused]]float sliderMark)
 {
     return 0.5;
