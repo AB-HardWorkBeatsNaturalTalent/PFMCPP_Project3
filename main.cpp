@@ -651,13 +651,13 @@ int main()
     computer.runMultipleProcesses();
 
 //Dog methods
-    Dog dog = Dog();
+    auto dog = Dog();
     dog.bark();
     dog.run();
     dog.fetch(" a small baby child ");
 
 //Teacher methods
-    Teacher teacher = Teacher();
+    auto teacher = Teacher();
     teacher.assignHomework("lesson 2");
     teacher.giveLecture();
     teacher.privateTutoring(50.00f);
