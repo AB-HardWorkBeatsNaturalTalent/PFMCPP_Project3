@@ -637,7 +637,17 @@ void Guitar::soundANote(int whichString, int whichFret)
 int main()
 {
     Example::main();
-    
+
+    Computer computer = Computer();
+    Dog dog = Dog();
+    Teacher teacher = Teacher();
+    AudioInterface audioInterface = AudioInterface();
+    Fingerboard fingerboard = Fingerboard();
+    Pickup pickup = Pickup();
+    Tuning tuning = Tuning();
+    GuitarString guitarString = GuitarString();
+    ToneControl toneControl = ToneControl();  
+    Guitar guitar = Guitar();
     
     std::cout << "good to go!" << std::endl;
 }
