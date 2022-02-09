@@ -465,19 +465,19 @@ struct GuitarString
     void becomeOldAndDirty();//sets the strings member variable
 
 };
-    bool GuitarString::requireRetuning()
-    {
-        std::cout << "guitar is perpetually out of tune" << std::endl;
-        return true;
-    }
-    bool GuitarString::snap()
-    {
-        return false;
-    }
-    void GuitarString::becomeOldAndDirty()
-    {
-        std::cout << "crusty, grimy, and dark, the string goes dull" << std::endl; 
-    }
+bool GuitarString::requireRetuning()
+{
+    std::cout << "guitar is perpetually out of tune" << std::endl;
+    return true;
+}
+bool GuitarString::snap()
+{
+    return false;
+}
+void GuitarString::becomeOldAndDirty()
+{
+    std::cout << "crusty, grimy, and dark, the string goes dull" << std::endl; 
+}
 
 
 /*
