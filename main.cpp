@@ -639,6 +639,7 @@ int main()
     Example::main();
 
     Computer computer = Computer();
+    Computer::GraphicsAccelerator computerGraphicsAccelerator = Computer::GraphicsAccelerator();
     Dog dog = Dog();
     Teacher teacher = Teacher();
     AudioInterface audioInterface = AudioInterface();
@@ -647,6 +648,7 @@ int main()
     Tuning tuning = Tuning();
     GuitarString guitarString = GuitarString();
     ToneControl toneControl = ToneControl();  
+    ToneControl::ToneAlgorithm toneAlgorithm = ToneControl::ToneAlgorithm();
     Guitar guitar = Guitar();
     
     std::cout << "good to go!" << std::endl;
