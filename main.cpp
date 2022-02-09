@@ -89,6 +89,7 @@ struct Computer
         //maximum SLI capability
         int maxSLICapability = 2;
 
+        GraphicsAccelerator();
         //accelerate the graphics
         void accelerateGraphics();//attempts to run code in parallel
         //set price of Graphics accelerator
@@ -108,6 +109,7 @@ struct Computer
     //5) audio interface name (std::string)
     std::string audioInterfaceName = "Apogee";
 
+    Computer();
     //1) run multiple processes 
     void runMultipleProcesses();
     //2) run memtest
@@ -119,6 +121,14 @@ struct Computer
     //returns true if driver updated successfully;
 
 };
+Computer::Computer()
+{
+    std::cout <<"Computer being constructed" << std::endl;
+}
+Computer::GraphicsAccelerator::GraphicsAccelerator()
+{
+    std::cout <<"GraphicsAccelerator being constructed "<< std::endl;
+}
 void Computer::GraphicsAccelerator::accelerateGraphics()
 {
     //do nothing
