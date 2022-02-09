@@ -107,10 +107,48 @@ struct CarWash
     you should be able to deduce the return type of those functions based on their usage in Person::run()
     You'll need to insert the Person struct from the video in the space below.
  */
+struct Foot
+{
+    void stepForward();
+    int stepSize();
 
+};
 
+void Foot::stepForward()
+{
+    //step
+}
 
+//defining outside of type declaration requires fully qualified name.
+int Foot::stepSize()
+{
+    return 1; //sounds about right
+}
 
+struct Person
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled;
+    Foot leftFoot;
+    Foot rightFoot;
+
+    int run(int howFast, bool startWithLeftFoot);
+};
+
+//defining outside of type declaration requires fully qualified name.
+int Person::run( [[maybe_unused]]int howFast, bool startWithLeftFoot)
+{
+    if(startWithLeftFoot)
+    {
+        return distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize();
+    }
+    return distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize();   
+        
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -151,6 +189,7 @@ struct Computer
         //output cuda version and number of cores
         std::string outputCUDAVersionAndCores();//returns a string representing the cuda capbility 
     };
+
     //1) number of processor cores (int)
     int numberOfProcessorCores  = 4;
     //2) memory In GB (int)
@@ -173,6 +212,33 @@ struct Computer
     //returns true if driver updated successfully;
 
 };
+void Computer::GraphicsAccelerator::accelerateGraphics()
+{
+    //do nothing
+}
+bool Computer::GraphicsAccelerator::setPrice([[maybe_unused]]float toPrice)
+{
+    return false;
+}
+std::string Computer::GraphicsAccelerator::outputCUDAVersionAndCores()
+{
+    return "hello world";
+}
+
+void Computer::runMultipleProcesses()
+{
+    //imagine running in parallel
+}
+void Computer::runMemtest()
+{
+    //memtest
+}
+bool Computer::updateGraphicsDriver(GraphicsAccelerator gA)
+{
+    std::string throwAway = gA.outputCUDAVersionAndCores();  
+    return true;
+}
+
 /*
 Thing 2) Dog 
  */
@@ -197,6 +263,21 @@ struct Dog
     //3) fetch a toy
     bool fetch(std::string toy); //returns true if the dog fetched the toy
 };
+
+void Dog::bark()
+{
+    std::cout << "Fido barks" << std::endl;
+}
+void Dog::run()
+{
+    std::cout << "Fido runs" << std::endl;
+}
+bool Dog::fetch(std::string toy)
+{
+    std::cout << "Fido tried to fetch" << toy << "but fell down" << std::endl;
+    return false;
+}
+
 /*
 Thing 3) Teacher
  */
@@ -222,8 +303,22 @@ struct Teacher
     float privateTutoring(float hourlyRate, int numberOfHours = 1); //input hourly rate and number of hours
     //3) assign homework
     void assignHomework(std::string homeworkAssignment);//input a string representation of the homework
-
 };
+
+void Teacher::giveLecture()
+{
+
+}
+float Teacher::privateTutoring(float hourlyRate, int numberOfHours)
+{
+    return hourlyRate * numberOfHours;
+}
+void Teacher::assignHomework(std::string homeworkAssignment)
+{
+    std::cout << homeworkAssignment << " assigned to class" << std::endl;
+}
+
+
 /*
 Thing 4) Audio Interface
  */
@@ -248,6 +343,21 @@ struct AudioInterface
     void displayInputLevelsOnGUI(float inputLevel1, float inputLevel2);//input to function is audio line in levels
 
 };
+
+float AudioInterface::adjustLevels([[maybe_unused]]float sliderMark)
+{
+    return 0.5;
+}
+bool AudioInterface::muteOutput()
+{
+    return true;
+}
+void AudioInterface::displayInputLevelsOnGUI(float inputLevel1, float inputLevel2)
+{
+    float nonsense = inputLevel1 * inputLevel2;
+    std::cout << "displayed levels: " << nonsense << std::endl;
+}
+
 /*
 Thing 5) Fingerboard
  */
@@ -273,6 +383,22 @@ struct Fingerboard
     bool requireNewFrets();//returns true if the fretboard requires new frets
 
 };
+
+int Fingerboard::fretANote(int stringNumber, int fretNumber)
+{
+    return stringNumber + fretNumber + 9000;
+}
+std::string Fingerboard::requireOil(bool required)
+{
+    if(required) return "yes";
+    return "no";    
+}
+bool Fingerboard::requireNewFrets()
+{
+    return false;
+}
+
+
 /*
 Thing 6) Tuning
 */
@@ -298,6 +424,23 @@ struct Tuning
     //input a midi pitch value for each string
     //sets the Tuning member variables
 };
+
+int Tuning::tuneStringUp()
+{
+    std::cout << "up-tuned" << std::endl;
+    return 100;
+}
+int Tuning::tuneStringDown()
+{
+    std::cout << "down-tuned" << std::endl;
+    return 0;
+}
+void Tuning::setAllStringTunings(int string1, int string2, int string3, int string4, int string5)
+{
+    std::cout << "all-tuned to: " << string1 << ", " << string2 << ", " << string3 << ", "  << string4 << ", " << string5 << std::endl;   
+}
+
+
 /*
 Thing 7) GuitarString
  */
@@ -322,6 +465,21 @@ struct GuitarString
     void becomeOldAndDirty();//sets the strings member variable
 
 };
+bool GuitarString::requireRetuning()
+{
+    std::cout << "guitar is perpetually out of tune" << std::endl;
+    return true;
+}
+bool GuitarString::snap()
+{
+    return false;
+}
+void GuitarString::becomeOldAndDirty()
+{
+    std::cout << "crusty, grimy, and dark, the string goes dull" << std::endl; 
+}
+
+
 /*
 Thing 8) Pickup
  */
@@ -346,6 +504,20 @@ struct Pickup
     float buckTheHum(float inputWithHum);//transforms inputWithHum to output with hum bucked.
 
 };
+
+void Pickup::bypass([[maybe_unused]]bool shouldBypass)
+{
+    std::cout << "never bypass a great opportunity" << std::endl;
+}
+float Pickup::senseFluxField()
+{
+    return 3.14159f;
+}
+float Pickup::buckTheHum(float inputWithHum)
+{
+    return inputWithHum / 2.0f;
+}
+
 /*
 Thing 9) Tone Control
  */
@@ -398,6 +570,42 @@ struct ToneControl
 
 };
 
+void ToneControl::ToneAlgorithm::setToneColors(int c1, int c2, int c3)
+{
+    std::cout << "tone color set to " << c1 << ", " << c2 << ", " << c3 << std::endl;
+}
+
+bool ToneControl::ToneAlgorithm::setUpperLimit(float upperLimit1)
+{
+    std::cout << upperLimit1 << std::endl;
+    return true;
+}
+
+bool ToneControl::ToneAlgorithm::setLowerLimit(float lowerLimit1)
+{
+    std::cout << lowerLimit1 << std::endl;
+    return true;
+}
+
+float ToneControl::setToneLevel(float input, float adjust)
+{
+    std::cout << input << " is good" << std::endl;
+    float toReturn = input - adjust;
+    std::cout << (input - adjust) << " is adjusted amount" << std::endl;
+
+    return toReturn;
+}
+
+bool ToneControl::requireRepair()
+{
+    return true;
+}
+
+bool ToneControl::autoAdjust()
+{
+    return true;
+}
+
 /*
 Thing 10) Guitar
  */
@@ -424,6 +632,26 @@ struct Guitar
     void soundANote(int stringNumber, int fretNumber);//play audio through speakers
 
 };
+
+bool Guitar::adjustTone(Fingerboard fb, float adj)
+{
+    std::cout << "adjust tone by: " << adj << std::endl; 
+    return fb.requireNewFrets();
+}
+int Guitar::tuneAString(Tuning t, GuitarString gs, int pitch)
+{
+    if(gs.requireRetuning())
+    {
+        std::cout << "nice guitar string: " << std::endl;
+    }       
+    return t.tuneStringUp() * pitch / 2;
+}
+void Guitar::soundANote(int whichString, int whichFret)
+{
+    std::cout << "string " << whichString << " sounds good" << "at fret " << whichFret << std::endl;
+}
+
+
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
