@@ -633,23 +633,23 @@ struct Guitar
 
 };
 
-    bool Guitar::adjustTone(Fingerboard fb, float adj)
+bool Guitar::adjustTone(Fingerboard fb, float adj)
+{
+    std::cout << "adjust tone by: " << adj << std::endl; 
+    return fb.requireNewFrets();
+}
+int Guitar::tuneAString(Tuning t, GuitarString gs, int pitch)
+{
+    if(gs.requireRetuning())
     {
-        std::cout << "adjust tone by: " << adj << std::endl; 
-        return fb.requireNewFrets();
-    }
-    int Guitar::tuneAString(Tuning t, GuitarString gs, int pitch)
-    {
-        if(gs.requireRetuning())
-        {
-            std::cout << "nice guitar string: " << std::endl;
-        }       
-        return t.tuneStringUp() * pitch / 2;
-    }
-    void Guitar::soundANote(int whichString, int whichFret)
-    {
-        std::cout << "string " << whichString << " sounds good" << "at fret " << whichFret << std::endl;
-    }
+        std::cout << "nice guitar string: " << std::endl;
+    }       
+    return t.tuneStringUp() * pitch / 2;
+}
+void Guitar::soundANote(int whichString, int whichFret)
+{
+    std::cout << "string " << whichString << " sounds good" << "at fret " << whichFret << std::endl;
+}
 
 
 /*
