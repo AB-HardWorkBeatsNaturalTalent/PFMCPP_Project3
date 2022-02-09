@@ -639,14 +639,16 @@ int main()
     Example::main();
 
 //GraphicsAccelerator methods
-    Computer::GraphicsAccelerator computerGraphicsAccelerator = Computer::GraphicsAccelerator();
+    auto computerGraphicsAccelerator = Computer::GraphicsAccelerator();
     computerGraphicsAccelerator.outputCUDAVersionAndCores();
     computerGraphicsAccelerator.accelerateGraphics();
     computerGraphicsAccelerator.setPrice(400.0f);
 
+    std::cout << "cuda info: " << computerGraphicsAccelerator.outputCUDAVersionAndCores() << std::endl;
+
 //Computer methods
-    Computer computer = Computer();
-    computer.updateGraphicsDriver(computerGraphicsAccelerator);
+    auto computer = Computer();
+    std::cout << "updated graphics: " << computer.updateGraphicsDriver(computerGraphicsAccelerator) << std::endl;
     computer.runMemtest();
     computer.runMultipleProcesses();
 
@@ -654,58 +656,59 @@ int main()
     auto dog = Dog();
     dog.bark();
     dog.run();
-    dog.fetch(" a small baby child ");
+    std::cout <<"successful fetch? :: " << dog.fetch(" a small baby child ") << std::endl;
 
 //Teacher methods
     auto teacher = Teacher();
     teacher.assignHomework("lesson 2");
-    teacher.giveLecture();
-    teacher.privateTutoring(50.00f);
+    teacher.giveLecture();    
+    std::cout << "money made: " << teacher.privateTutoring(50.00f) << std::endl;
 
 //AudioInterface methods
-    AudioInterface audioInterface = AudioInterface();
+    auto audioInterface = AudioInterface();
     audioInterface.displayInputLevelsOnGUI(.67f, .84f);
-    audioInterface.muteOutput();
-    audioInterface.adjustLevels(.2f);
+    audioInterface.muteOutput();    
+    std::cout << "level adjusted to: " << audioInterface.adjustLevels(.2f) << std::endl;
 
 //Fingerboard methods
-    Fingerboard fingerboard = Fingerboard();
-    fingerboard.fretANote(1, 6);
+    auto fingerboard = Fingerboard();    
     fingerboard.requireNewFrets();
     fingerboard.requireOil(true);
+    std::cout << "midi of fretted note: " << fingerboard.fretANote(1, 6) << std::endl;
 
 //Pickup methods
-    Pickup pickup = Pickup();
+    auto pickup = Pickup();
     pickup.bypass(true);
     pickup.buckTheHum(23.9f);
     pickup.senseFluxField();
+    
 
 //Tuning methods
-    Tuning tuning = Tuning();
+    auto tuning = Tuning();
     tuning.setAllStringTunings(1, 3, 5, 7, 9);
     tuning.tuneStringUp();
     tuning.tuneStringDown();
 
 //GuitarString methods
-    GuitarString guitarString = GuitarString();
+    auto guitarString = GuitarString();
     guitarString.becomeOldAndDirty();
     guitarString.requireRetuning();
     guitarString.snap();
 
 //ToneControl methods
-    ToneControl toneControl = ToneControl();  
+    auto toneControl = ToneControl();  
     toneControl.setToneLevel(3.9f, 2.0f);
     toneControl.autoAdjust();
     toneControl.requireRepair();
 
 //ToneAlgorithm methods
-    ToneControl::ToneAlgorithm toneAlgorithm = ToneControl::ToneAlgorithm();
+    auto toneAlgorithm = ToneControl::ToneAlgorithm();
     toneAlgorithm.setUpperLimit(1.09f);
     toneAlgorithm.setLowerLimit(.02f);
     toneAlgorithm.setToneColors(1, 2, 3);
 
 //Guitar methods
-    Guitar guitar = Guitar();
+    auto guitar = Guitar();
     guitar.soundANote(3, 9);
     guitar.adjustTone(fingerboard, 1.09f);
     guitar.tuneAString(tuning, guitarString, 12);
