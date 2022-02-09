@@ -390,14 +390,8 @@ int Fingerboard::fretANote(int stringNumber, int fretNumber)
 }
 std::string Fingerboard::requireOil(bool required)
 {
-    if(required)
-    {
-        return "yes";
-    }
-    else
-    {
-        return "no";
-    }
+    if(required) return "yes";
+    return "no";    
 }
 bool Fingerboard::requireNewFrets()
 {
