@@ -148,7 +148,7 @@ void Computer::runMultipleProcesses()
 }
 void Computer::runMemtest()
 {
-    //memtest
+    std::cout << "memtest running" << std::endl;
 }
 bool Computer::updateGraphicsDriver(GraphicsAccelerator gA)
 {
@@ -282,6 +282,7 @@ float AudioInterface::adjustLevels([[maybe_unused]]float sliderMark)
 }
 bool AudioInterface::muteOutput()
 {
+    std::cout << "muted output" << std::endl;
     return true;
 }
 void AudioInterface::displayInputLevelsOnGUI(float inputLevel1, float inputLevel2)
@@ -332,6 +333,7 @@ std::string Fingerboard::requireOil(bool required)
 }
 bool Fingerboard::requireNewFrets()
 {
+    std::cout << "the fretboard does not require new frets" << std::endl;
     return false;
 }
 
@@ -453,7 +455,7 @@ struct Pickup
 };
 Pickup::Pickup()
 {
-    std::cout << "Pickup construced" << std::endl;
+    std::cout << "Pickup constructed" << std::endl;
 }
 void Pickup::bypass([[maybe_unused]]bool shouldBypass)
 {
@@ -465,6 +467,7 @@ float Pickup::senseFluxField()
 }
 float Pickup::buckTheHum(float inputWithHum)
 {
+    std::cout << "no more hum" << std::endl;
     return inputWithHum / 2.0f;
 }
 
