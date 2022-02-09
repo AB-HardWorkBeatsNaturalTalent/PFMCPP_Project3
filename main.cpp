@@ -638,26 +638,41 @@ int main()
 {
     Example::main();
 
+//GraphicsAccelerator methods
+    Computer::GraphicsAccelerator computerGraphicsAccelerator = Computer::GraphicsAccelerator();
+    computerGraphicsAccelerator.outputCUDAVersionAndCores();
+    computerGraphicsAccelerator.accelerateGraphics();
+    computerGraphicsAccelerator.setPrice(400.0f);
+
 //Computer methods
     Computer computer = Computer();
-    computer.updateGraphicsDriver(Computer::GraphicsAccelerator gA);
+    computer.updateGraphicsDriver(computerGraphicsAccelerator);
     computer.runMemtest();
     computer.runMultipleProcesses();
 
-//GraphicsAccelerator methods
-    Computer::GraphicsAccelerator computerGraphicsAccelerator = Computer::GraphicsAccelerator();
-
 //Dog methods
     Dog dog = Dog();
+    dog.bark();
+    dog.run();
+    dog.fetch(" a small baby child ");
 
 //Teacher methods
     Teacher teacher = Teacher();
+    teacher.assignHomework("lesson 2");
+    teacher.giveLecture();
+    teacher.privateTutoring(50.00);
 
 //AudioInterface methods
     AudioInterface audioInterface = AudioInterface();
+    audioInterface.displayInputLevelsOnGUI(.67, .84);
+    audioInterface.muteOutput();
+    audioInterface.adjustLevels(.2);
 
 //Fingerboard methods
     Fingerboard fingerboard = Fingerboard();
+    fingerboard.fretANote(1, 6);
+    fingerboard.requireNewFrets();
+    fingerboard.requireOil(true);
 
 //Pickup methods
     Pickup pickup = Pickup();
