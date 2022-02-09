@@ -660,13 +660,13 @@ int main()
     Teacher teacher = Teacher();
     teacher.assignHomework("lesson 2");
     teacher.giveLecture();
-    teacher.privateTutoring(50.00);
+    teacher.privateTutoring(50.00f);
 
 //AudioInterface methods
     AudioInterface audioInterface = AudioInterface();
-    audioInterface.displayInputLevelsOnGUI(.67, .84);
+    audioInterface.displayInputLevelsOnGUI(.67f, .84f);
     audioInterface.muteOutput();
-    audioInterface.adjustLevels(.2);
+    audioInterface.adjustLevels(.2f);
 
 //Fingerboard methods
     Fingerboard fingerboard = Fingerboard();
@@ -676,21 +676,39 @@ int main()
 
 //Pickup methods
     Pickup pickup = Pickup();
+    pickup.bypass(true);
+    pickup.buckTheHum(23.9f);
+    pickup.senseFluxField();
 
 //Tuning methods
     Tuning tuning = Tuning();
+    tuning.setAllStringTunings(1, 3, 5, 7, 9);
+    tuning.tuneStringUp();
+    tuning.tuneStringDown();
 
 //GuitarString methods
     GuitarString guitarString = GuitarString();
+    guitarString.becomeOldAndDirty();
+    guitarString.requireRetuning();
+    guitarString.snap();
 
 //ToneControl methods
     ToneControl toneControl = ToneControl();  
+    toneControl.setToneLevel(3.9f, 2.0f);
+    toneControl.autoAdjust();
+    toneControl.requireRepair();
 
 //ToneAlgorithm methods
     ToneControl::ToneAlgorithm toneAlgorithm = ToneControl::ToneAlgorithm();
+    toneAlgorithm.setUpperLimit(1.09f);
+    toneAlgorithm.setLowerLimit(.02f);
+    toneAlgorithm.setToneColors(1, 2, 3);
 
 //Guitar methods
     Guitar guitar = Guitar();
+    guitar.soundANote(3, 9);
+    guitar.adjustTone(fingerboard, 1.09f);
+    guitar.tuneAString(tuning, guitarString, 12);
     
     std::cout << "good to go!" << std::endl;
 }
