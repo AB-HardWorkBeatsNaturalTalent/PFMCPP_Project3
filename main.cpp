@@ -93,11 +93,11 @@ struct Computer
 };
 Computer::Computer() : numberOfProcessorCores(5), memoryInGB(32), motherboardType("micro ATX")
 {
-    std::cout <<"Computer being constructed" << std::endl;
+    std::cout <<"Computer being constructed" << std::endl; FIXME: add space around << 
 }
 Computer::GraphicsAccelerator::GraphicsAccelerator() : isGSyncCapable(true) 
 {
-    std::cout <<"GraphicsAccelerator being constructed "<< std::endl;
+    std::cout <<"GraphicsAccelerator being constructed "<< std::endl;FIXME: add space around << 
 }
 void Computer::GraphicsAccelerator::accelerateGraphics()
 {
@@ -118,7 +118,7 @@ void Computer::runMultipleProcesses()
 }
 void Computer::runMemtest()
 {    
-    std::cout << "memtest running on " << this->memoryInGB << "GB" << std::endl;
+    std::cout << "memtest running on " << this->memoryInGB << "GB" << std::endl; FIXME: remove this->
 }
 bool Computer::updateGraphicsDriver(GraphicsAccelerator gA)
 {
@@ -154,16 +154,16 @@ struct Dog
 
 Dog::Dog() : hairColor("black"), hairLengthInCM(3.01f), numberOfTeeth(2), lengthOfTailInCm(6.09f), breed("pitbull")
 {
-    std::cout <<"Dog being constructed" << std::endl;
+    std::cout <<"Dog being constructed" << std::endl;FIXME: add space around << 
 }
 
 void Dog::bark()
 {
-    std::cout << "Fido barks like a mean " << this->breed <<  std::endl;
+    std::cout << "Fido barks like a mean " << this->breed <<  std::endl; FIXME: remove this->
 }
 void Dog::run()
 {
-    std::cout << "Fido runs with his " << this->hairColor << "blowing in the wind" << std::endl;
+    std::cout << "Fido runs with his " << this->hairColor << "blowing in the wind" << std::endl; FIXME: remove this->
 }
 bool Dog::fetch(std::string toy)
 {
@@ -205,7 +205,7 @@ Teacher::Teacher() : domainExpertise("philosophy")
 }
 void Teacher::giveLecture()
 {
-    std::cout << "class of " << this->domainExpertise <<std::endl;
+    std::cout << "class of " << this->domainExpertise <<std::endl; FIXME: remove this->, add space around <<
 }
 float Teacher::privateTutoring(float hourlyRate, int numberOfHours)
 {
@@ -244,7 +244,7 @@ struct AudioInterface
 };
 AudioInterface::AudioInterface() : numberOfInputs(2), numberOfOutputs(4)
 {
-    std::cout << "AudioInterface constructed with" << this->numberOfInputs << "number of Inputs" <<std::endl;
+    std::cout << "AudioInterface constructed with" << this->numberOfInputs << "number of Inputs" <<std::endl;FIXME: add space around <<  FIXME: remove this->
 }
 float AudioInterface::adjustLevels([[maybe_unused]]float sliderMark)
 {
@@ -385,7 +385,7 @@ GuitarString::GuitarString() : gauge(14)
 }
 bool GuitarString::requireRetuning()
 {
-    std::cout << "guitar is perpetually out of tune on " << this->gauge << "strings" <<std::endl;
+    std::cout << "guitar is perpetually out of tune on " << this->gauge << "strings" <<std::endl; FIXME: remove this-> FIXME: add space around <<
     return true;
 }
 bool GuitarString::snap()
@@ -425,7 +425,7 @@ struct Pickup
 };
 Pickup::Pickup()
 {
-    std::cout << "Pickup constructed with " << this->typeOfMetal << "metal" <<std::endl;
+    std::cout << "Pickup constructed with " << this->typeOfMetal << "metal" <<std::endl;FIXME: add space around <<  FIXME: remove this->
 }
 void Pickup::bypass([[maybe_unused]]bool shouldBypass)
 {
@@ -501,7 +501,7 @@ ToneControl::ToneControl()
 }
 ToneControl::ToneAlgorithm::ToneAlgorithm(): color1(10), color2(11), color3(12)
 {
-    std::cout << "ToneAlgorithm constructing with upper limit: " << this->upperLimit << "and lower limit: " << this->lowerLimit <<std::endl;
+    std::cout << "ToneAlgorithm constructing with upper limit: " << this->upperLimit << "and lower limit: " << this->lowerLimit <<std::endl;FIXME: add space around <<  FIXME: remove this->
 }
 void ToneControl::ToneAlgorithm::setToneColors(int c1, int c2, int c3)
 {
