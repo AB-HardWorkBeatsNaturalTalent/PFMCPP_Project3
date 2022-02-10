@@ -53,7 +53,7 @@ struct Computer
         //model name 
         std::string modelName = "default GPU";
         //is gsync capable
-        bool isGSyncCapable = true;
+        bool isGSyncCapable;
         //price
         float price = 100.00f;
         //maximum SLI capability
@@ -75,7 +75,7 @@ struct Computer
     //3) graphics accelerator (std::string)
     GraphicsAccelerator graphicsAccelerator;
     //4) motherboard type (std::string)
-    std::string motherboardType = "ATX";
+    std::string motherboardType;
     //5) audio interface name (std::string)
     std::string audioInterfaceName = "Apogee";
 
@@ -91,11 +91,11 @@ struct Computer
     //returns true if driver updated successfully;
 
 };
-Computer::Computer() : numberOfProcessorCores(5), memoryInGB(32)
+Computer::Computer() : numberOfProcessorCores(5), memoryInGB(32), motherboardType("micro ATX")
 {
     std::cout <<"Computer being constructed" << std::endl;
 }
-Computer::GraphicsAccelerator::GraphicsAccelerator()
+Computer::GraphicsAccelerator::GraphicsAccelerator() : isGSyncCapable(true) 
 {
     std::cout <<"GraphicsAccelerator being constructed "<< std::endl;
 }
@@ -117,8 +117,8 @@ void Computer::runMultipleProcesses()
     //imagine running in parallel
 }
 void Computer::runMemtest()
-{
-    std::cout << "memtest running" << std::endl;
+{    
+    std::cout << "memtest running on " << this->memoryInGB << "GB" << std::endl;
 }
 bool Computer::updateGraphicsDriver(GraphicsAccelerator gA)
 {
@@ -133,15 +133,15 @@ struct Dog
 {
 
     //1) hair color (std::string)
-    std::string hairColor = "golden";
+    std::string hairColor;
     //2) hair length in cm (float)
-    float hairLengthInCM = 2.034467f;
+    float hairLengthInCM;
     //3) number of teeth (int)
-    int numberOfTeeth = 3;
+    int numberOfTeeth;
     //4) length of tail in cm (float)
-    float lengthOfTailInCm = 2.09f;
+    float lengthOfTailInCm;
     //5) breed (std::string)
-    std::string breed = "retriever";
+    std::string breed;
 
     Dog();
     //1) bark
@@ -159,11 +159,11 @@ Dog::Dog() : hairColor("black"), hairLengthInCM(3.01f), numberOfTeeth(2), length
 
 void Dog::bark()
 {
-    std::cout << "Fido barks" << std::endl;
+    std::cout << "Fido barks like a mean " << this->breed <<  std::endl;
 }
 void Dog::run()
 {
-    std::cout << "Fido runs" << std::endl;
+    std::cout << "Fido runs with his " << this->hairColor << "blowing in the wind" << std::endl;
 }
 bool Dog::fetch(std::string toy)
 {
@@ -180,7 +180,7 @@ struct Teacher
     //1) credential type (std::string)
     std::string credentialType = "no credential";
     //2) domain expertise (std::string)
-    std::string domainExpertise= "philosophy";
+    std::string domainExpertise;
     //3) number of classes taught (int)
     int numberOfClassesTaught = 6;
     //4) years of tenure (float)
@@ -199,13 +199,13 @@ struct Teacher
     void assignHomework(std::string homeworkAssignment);//input a string representation of the homework
 };
 
-Teacher::Teacher()
+Teacher::Teacher() : domainExpertise("philosophy")
 {
     std::cout << "Teacher being constructed" << std::endl;
 }
 void Teacher::giveLecture()
 {
-
+    std::cout << "class of " << this->domainExpertise <<std::endl;
 }
 float Teacher::privateTutoring(float hourlyRate, int numberOfHours)
 {
@@ -223,9 +223,9 @@ Thing 4) Audio Interface
 struct AudioInterface
 {
     //1) number of inputs (int)
-    int numberOfInputs = 2;
+    int numberOfInputs;
     //2) number of outputs (int)
-    int numberOfOutputs = 2;
+    int numberOfOutputs;
     //3) speaker volume level (float)
     float speakerVolumeLevel = -6.0;
     //4) color (std::string)
@@ -242,9 +242,9 @@ struct AudioInterface
     void displayInputLevelsOnGUI(float inputLevel1, float inputLevel2);//input to function is audio line in levels
 
 };
-AudioInterface::AudioInterface()
+AudioInterface::AudioInterface() : numberOfInputs(2), numberOfOutputs(4)
 {
-    std::cout << "AudioInterface constructed" << std::endl;
+    std::cout << "AudioInterface constructed with" << this->numberOfInputs << "number of Inputs" <<std::endl;
 }
 float AudioInterface::adjustLevels([[maybe_unused]]float sliderMark)
 {
@@ -268,15 +268,15 @@ struct Fingerboard
 {
 
     //1) type of wood (std::string)
-    std::string typeOfWood = "bamboo";
+    std::string typeOfWood;
     //2) number of frets (int)
-    int numberOfFrets = 23;
+    int numberOfFrets;
     //3) length in cm (float)
-    float lengthInCm = 23.04f;
+    float lengthInCm;
     //4) width in cm (float)
-    float widthInCm = 6.9f;
+    float widthInCm;
     //5) number of inlays (int)
-    int numberOfInlays = 7;
+    int numberOfInlays;
 
     Fingerboard();
     //1) fret a note
@@ -288,7 +288,7 @@ struct Fingerboard
 
 };
 
-Fingerboard::Fingerboard()
+Fingerboard::Fingerboard() : typeOfWood("bamboo"), numberOfFrets(23), lengthInCm(23.4f), widthInCm(6.9f), numberOfInlays(3)
 {
     std::cout << "Fingerboard being constructed" << std::endl;
 }
