@@ -69,9 +69,9 @@ struct Computer
     };
 
     //1) number of processor cores (int)
-    int numberOfProcessorCores  = 4;
+    int numberOfProcessorCores;
     //2) memory In GB (int)
-    int memoryInGB = 16;
+    int memoryInGB;
     //3) graphics accelerator (std::string)
     GraphicsAccelerator graphicsAccelerator;
     //4) motherboard type (std::string)
@@ -91,7 +91,7 @@ struct Computer
     //returns true if driver updated successfully;
 
 };
-Computer::Computer()
+Computer::Computer() : numberOfProcessorCores(5), memoryInGB(32)
 {
     std::cout <<"Computer being constructed" << std::endl;
 }
@@ -152,7 +152,7 @@ struct Dog
     bool fetch(std::string toy); //returns true if the dog fetched the toy
 };
 
-Dog::Dog()
+Dog::Dog() : hairColor("black"), hairLengthInCM(3.01f), numberOfTeeth(2), lengthOfTailInCm(6.09f), breed("pitbull")
 {
     std::cout <<"Dog being constructed" << std::endl;
 }
