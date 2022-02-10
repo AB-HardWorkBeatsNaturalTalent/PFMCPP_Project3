@@ -89,6 +89,7 @@ struct Computer
         //maximum SLI capability
         int maxSLICapability = 2;
 
+        GraphicsAccelerator();
         //accelerate the graphics
         void accelerateGraphics();//attempts to run code in parallel
         //set price of Graphics accelerator
@@ -108,6 +109,7 @@ struct Computer
     //5) audio interface name (std::string)
     std::string audioInterfaceName = "Apogee";
 
+    Computer();
     //1) run multiple processes 
     void runMultipleProcesses();
     //2) run memtest
@@ -119,6 +121,14 @@ struct Computer
     //returns true if driver updated successfully;
 
 };
+Computer::Computer()
+{
+    std::cout <<"Computer being constructed" << std::endl;
+}
+Computer::GraphicsAccelerator::GraphicsAccelerator()
+{
+    std::cout <<"GraphicsAccelerator being constructed "<< std::endl;
+}
 void Computer::GraphicsAccelerator::accelerateGraphics()
 {
     //do nothing
@@ -138,7 +148,7 @@ void Computer::runMultipleProcesses()
 }
 void Computer::runMemtest()
 {
-    //memtest
+    std::cout << "memtest running" << std::endl;
 }
 bool Computer::updateGraphicsDriver(GraphicsAccelerator gA)
 {
@@ -163,6 +173,7 @@ struct Dog
     //5) breed (std::string)
     std::string breed = "retriever";
 
+    Dog();
     //1) bark
     void bark();
     //2) run
@@ -170,6 +181,11 @@ struct Dog
     //3) fetch a toy
     bool fetch(std::string toy); //returns true if the dog fetched the toy
 };
+
+Dog::Dog()
+{
+    std::cout <<"Dog being constructed" << std::endl;
+}
 
 void Dog::bark()
 {
@@ -202,6 +218,7 @@ struct Teacher
     //5) rating by students (char)
     char ratingByStudents  = 'A';
 
+    Teacher();
     //1) give lecture
     void giveLecture();
 
@@ -212,6 +229,10 @@ struct Teacher
     void assignHomework(std::string homeworkAssignment);//input a string representation of the homework
 };
 
+Teacher::Teacher()
+{
+    std::cout << "Teacher being constructed" << std::endl;
+}
 void Teacher::giveLecture()
 {
 
@@ -242,6 +263,7 @@ struct AudioInterface
     //5) headphone volume level (float)
     float headphoneVolumeLevel = -6.0;
 
+    AudioInterface();
     //1) adjust levels
     float adjustLevels(float sliderMark); //returns the current level 
     //2) mute output
@@ -250,13 +272,17 @@ struct AudioInterface
     void displayInputLevelsOnGUI(float inputLevel1, float inputLevel2);//input to function is audio line in levels
 
 };
-
+AudioInterface::AudioInterface()
+{
+    std::cout << "AudioInterface constructed" << std::endl;
+}
 float AudioInterface::adjustLevels([[maybe_unused]]float sliderMark)
 {
     return 0.5;
 }
 bool AudioInterface::muteOutput()
 {
+    std::cout << "muted output" << std::endl;
     return true;
 }
 void AudioInterface::displayInputLevelsOnGUI(float inputLevel1, float inputLevel2)
@@ -282,6 +308,7 @@ struct Fingerboard
     //5) number of inlays (int)
     int numberOfInlays = 7;
 
+    Fingerboard();
     //1) fret a note
     int fretANote(int stringNumber, int fretNumber);//returns midi pitch value of fretted note
     //2) require oil
@@ -291,6 +318,10 @@ struct Fingerboard
 
 };
 
+Fingerboard::Fingerboard()
+{
+    std::cout << "Fingerboard being constructed" << std::endl;
+}
 int Fingerboard::fretANote(int stringNumber, int fretNumber)
 {
     return stringNumber + fretNumber + 9000;
@@ -302,6 +333,7 @@ std::string Fingerboard::requireOil(bool required)
 }
 bool Fingerboard::requireNewFrets()
 {
+    std::cout << "the fretboard does not require new frets" << std::endl;
     return false;
 }
 
@@ -322,6 +354,7 @@ struct Tuning
     //5) string 5 midi tuning (int)
     int string5MidiTuning = 30;
 
+    Tuning();
     //1) tune string up
     int tuneStringUp(); //returns pitch of string
     //2) tune string down
@@ -331,7 +364,10 @@ struct Tuning
     //input a midi pitch value for each string
     //sets the Tuning member variables
 };
-
+Tuning::Tuning()
+{
+    std::cout << "Tuning constructed" << std::endl;
+}
 int Tuning::tuneStringUp()
 {
     std::cout << "up-tuned" << std::endl;
@@ -364,6 +400,7 @@ struct GuitarString
     //5) is old and dirty (bool)
     bool isOldAndDirty = false;
 
+    GuitarString();
     //1) require retuning
     bool requireRetuning();
     //2) snap
@@ -372,6 +409,10 @@ struct GuitarString
     void becomeOldAndDirty();//sets the strings member variable
 
 };
+GuitarString::GuitarString()
+{
+    std::cout << "GuitarString being constrcuted" << std::endl;
+}
 bool GuitarString::requireRetuning()
 {
     std::cout << "guitar is perpetually out of tune" << std::endl;
@@ -403,6 +444,7 @@ struct Pickup
     //5) bypass (bool)
     bool bypassPickup = false;
 
+    Pickup();
     //1) bypass 
     void bypass(bool shouldBypass); //sets bypass member variable
     //2) sense flux field
@@ -411,7 +453,10 @@ struct Pickup
     float buckTheHum(float inputWithHum);//transforms inputWithHum to output with hum bucked.
 
 };
-
+Pickup::Pickup()
+{
+    std::cout << "Pickup constructed" << std::endl;
+}
 void Pickup::bypass([[maybe_unused]]bool shouldBypass)
 {
     std::cout << "never bypass a great opportunity" << std::endl;
@@ -422,6 +467,7 @@ float Pickup::senseFluxField()
 }
 float Pickup::buckTheHum(float inputWithHum)
 {
+    std::cout << "no more hum" << std::endl;
     return inputWithHum / 2.0f;
 }
 
@@ -443,6 +489,7 @@ struct ToneControl
         //5 lower Limit
         float lowerLimit = 0.0f;
 
+        ToneAlgorithm();
         //1 set tone colors
         void setToneColors(int color1, int color2, int color3);//input each color to set
         //2 set upper limit
@@ -466,6 +513,7 @@ struct ToneControl
     //5) is smooth to turn (bool)
     bool isSmoothToTurn = true;
 
+    ToneControl();
     //1) set tone level
     float setToneLevel(float inputLevel, float adjustment); //apply adjustment to the inputlevel
     //return the adjusted tone level
@@ -477,6 +525,14 @@ struct ToneControl
 
 };
 
+ToneControl::ToneControl()
+{
+    std::cout << "ToneControl being constructed" << std::endl;
+}
+ToneControl::ToneAlgorithm::ToneAlgorithm()
+{
+    std::cout << "ToneAlgorithm constructing" << std::endl;
+}
 void ToneControl::ToneAlgorithm::setToneColors(int c1, int c2, int c3)
 {
     std::cout << "tone color set to " << c1 << ", " << c2 << ", " << c3 << std::endl;
@@ -530,6 +586,7 @@ struct Guitar
     //5) Tone Control 
     ToneControl toneControl;
 
+    Guitar();
     //1) adjust tone
     bool adjustTone(Fingerboard fingerboard, float adjustAmount);//returns true if tone control adjusted the correct amount
     //2) tune a string
@@ -540,6 +597,10 @@ struct Guitar
 
 };
 
+Guitar::Guitar()
+{
+    std::cout << "Guitar being constructed" << std::endl;
+}
 bool Guitar::adjustTone(Fingerboard fb, float adj)
 {
     std::cout << "adjust tone by: " << adj << std::endl; 
@@ -577,7 +638,82 @@ void Guitar::soundANote(int whichString, int whichFret)
 int main()
 {
     Example::main();
-    
-    
+
+//GraphicsAccelerator methods
+    auto computerGraphicsAccelerator = Computer::GraphicsAccelerator();
+    computerGraphicsAccelerator.outputCUDAVersionAndCores();
+    computerGraphicsAccelerator.accelerateGraphics();
+    computerGraphicsAccelerator.setPrice(400.0f);
+
+    std::cout << "cuda info: " << computerGraphicsAccelerator.outputCUDAVersionAndCores() << std::endl;
+
+//Computer methods
+    auto computer = Computer();
+    std::cout << "updated graphics: " << computer.updateGraphicsDriver(computerGraphicsAccelerator) << std::endl;
+    computer.runMemtest();
+    computer.runMultipleProcesses();
+
+//Dog methods
+    auto dog = Dog();
+    dog.bark();
+    dog.run();
+    std::cout <<"successful fetch? :: " << dog.fetch(" a small baby child ") << std::endl;
+
+//Teacher methods
+    auto teacher = Teacher();
+    teacher.assignHomework("lesson 2");
+    teacher.giveLecture();    
+    std::cout << "money made: " << teacher.privateTutoring(50.00f) << std::endl;
+
+//AudioInterface methods
+    auto audioInterface = AudioInterface();
+    audioInterface.displayInputLevelsOnGUI(.67f, .84f);
+    audioInterface.muteOutput();    
+    std::cout << "level adjusted to: " << audioInterface.adjustLevels(.2f) << std::endl;
+
+//Fingerboard methods
+    auto fingerboard = Fingerboard();    
+    fingerboard.requireNewFrets();
+    fingerboard.requireOil(true);
+    std::cout << "midi of fretted note: " << fingerboard.fretANote(1, 6) << std::endl;
+
+//Pickup methods
+    auto pickup = Pickup();
+    pickup.bypass(true);
+    pickup.buckTheHum(23.9f);    
+    std::cout << "fluxfield is: "  << pickup.senseFluxField() << std::endl;
+
+
+//Tuning methods
+    auto tuning = Tuning();
+    tuning.setAllStringTunings(1, 3, 5, 7, 9);
+    tuning.tuneStringDown();
+    std::cout << "up-tuned string pitch" << tuning.tuneStringUp() << std::endl;
+
+//GuitarString methods
+    auto guitarString = GuitarString();
+    guitarString.becomeOldAndDirty();
+    guitarString.requireRetuning();    
+    std::cout << "did it snap: " << guitarString.snap() << std::endl;
+
+
+//ToneControl methods
+    auto toneControl = ToneControl();  
+    toneControl.setToneLevel(3.9f, 2.0f);
+    toneControl.requireRepair();
+    std::cout << "auto adjusted tone: "  << toneControl.autoAdjust() << std::endl;
+
+//ToneAlgorithm methods
+    auto toneAlgorithm = ToneControl::ToneAlgorithm();
+    toneAlgorithm.setUpperLimit(1.09f);
+    toneAlgorithm.setToneColors(1, 2, 3);
+    std::cout << "lower limit set to:" << toneAlgorithm.setLowerLimit(.02f) << std::endl;
+
+//Guitar methods
+    auto guitar = Guitar();
+    guitar.soundANote(3, 9);
+    guitar.tuneAString(tuning, guitarString, 12);
+    std::cout << "guitar tone adjusted" << guitar.adjustTone(fingerboard, 1.09f) << std::endl;
+
     std::cout << "good to go!" << std::endl;
 }
