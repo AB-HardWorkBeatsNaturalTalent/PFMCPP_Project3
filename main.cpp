@@ -524,6 +524,7 @@ struct ToneControl
     bool autoAdjust();//returns true if autoAdjust is turned on; else false 
 
 };
+
 ToneControl::ToneControl()
 {
     std::cout << "ToneControl being constructed" << std::endl;
