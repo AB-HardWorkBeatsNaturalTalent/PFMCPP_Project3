@@ -427,6 +427,27 @@ struct Fingerboard
     //3) requre new frets
     bool requireNewFrets();//returns true if the fretboard requires new frets
 
+    void fretThreeNotes(int string1, int string2, int string3, int fret1 , int fret2, int fret3)
+    {
+        int temp = 0;
+        int strings = 3;
+        for(int i = 0; i < strings; i++)
+        {
+            if(i == 0){
+                temp = fretANote(string1, fret1);
+            }
+            else if(i == 1)
+            {
+                temp = fretANote(string2, fret2);
+            }
+            else
+            {
+                temp = fretANote(string3, fret3);
+            }
+            std::cout << "note sounded: " << temp << std::endl;
+        }
+    }
+
 };
 
 Fingerboard::Fingerboard() : typeOfWood("bamboo"), numberOfFrets(23), lengthInCm(23.4f), widthInCm(6.9f), numberOfInlays(3)
