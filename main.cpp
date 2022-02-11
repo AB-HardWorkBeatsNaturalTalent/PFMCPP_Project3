@@ -554,6 +554,15 @@ struct GuitarString
     //3) become old and dirty
     void becomeOldAndDirty();//sets the strings member variable
 
+    void vibrationsForHz(int Hz)
+    {
+        for(int i = 0; i < Hz; i++)
+        {
+            std::cout << "gauge " << gauge << " is vibrating";
+        }
+        std::cout << std::endl;
+    }
+
 };
 GuitarString::GuitarString() : gauge(14)
 {
