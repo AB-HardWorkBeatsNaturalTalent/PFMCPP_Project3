@@ -80,12 +80,12 @@ struct Computer
 { 
     struct GraphicsAccelerator
     {
-        //number of cuda cores
-        int numberOfCUDACores = 1200;
-        //model name 
-        std::string modelName = "default GPU";
         //is gsync capable
         bool isGSyncCapable;
+        //number of cuda cores
+        int numberOfCUDACores;
+        //model name 
+        std::string modelName = "default GPU";
         //price
         float price = 100.00f;
         //maximum SLI capability
@@ -98,6 +98,31 @@ struct Computer
         bool setPrice(float newPrice = 100.0f);
         //output cuda version and number of cores
         std::string outputCUDAVersionAndCores();//returns a string representing the cuda capbility 
+
+        void boostTheGraphics()
+        {
+            int testValue = 0;
+            while(isGSyncCapable)
+            {
+                testValue = 1;
+                std::cout << "Boosted!" << std::endl;
+                break;
+            }
+            std::cout << "Out of Boost" << std::endl;
+        } // part 5 begin.
+        int parallelSpeedIncreaseFactor(int desiredFactor)
+        {
+            int totalCoresProcessing = 0;
+            for(int i = 0; i <= int(price); ++i)
+            {
+                std::cout << "boosted processor core block i: " << i*desiredFactor << std::endl;
+                totalCoresProcessing += i*desiredFactor;
+                if(i == 6) break;
+            }
+            std::cout << "more money more problems solved" << std::endl;
+            return totalCoresProcessing;
+        }
+        
     };
 
     //1) number of processor cores (int)
@@ -122,12 +147,51 @@ struct Computer
     //input the graphics accelerator to update drivers for
     //returns true if driver updated successfully;
 
+    double analyzeEnergyConsumption(int numberOfSecondsPoweredOn)
+    {
+        double consumed = numberOfSecondsPoweredOn * memoryInGB * .0345;
+        if(graphicsAccelerator.isGSyncCapable)
+        {
+            consumed *= 4;
+        }
+        std::cout << "for the sake of science; energy consumed: " << consumed << std::endl;
+        return consumed;
+
+    }
+    std::string memoryTopologyBlocksPerCore()
+    {
+        //number of cores & number of GB RAM
+        auto memoryPerCore = memoryInGB / static_cast<double>(numberOfProcessorCores);
+        
+        std::string memoryTopology = "";        
+        while(numberOfProcessorCores > 0)
+        {
+            for(int i = 0; i <= memoryPerCore; ++i)
+            {
+                memoryTopology += "block: ";
+                memoryTopology += std::to_string(i);
+                memoryTopology += "core :";
+                memoryTopology += std::to_string(numberOfProcessorCores);
+                memoryTopology += "\n"; 
+            }
+            numberOfProcessorCores--;
+        }
+        return memoryTopology;
+    }
+
+
+/*1) add some new member functions to EACH of your types.     
+ 2) inside these new member functions, use while() and for() loops to do something interesting 
+         a) example: have a loop that modifies a member variable of some object created outside the loop.
+         b) when that member variable reaches a certain threshold, return it mid-loop.
+         c) maybe use function parameters to control the starting value of that member variable or control the threshold*/
+
 };
 Computer::Computer() : numberOfProcessorCores(5), memoryInGB(32), motherboardType("micro ATX")
 {
     std::cout << "Computer being constructed" << std::endl; 
 }
-Computer::GraphicsAccelerator::GraphicsAccelerator() : isGSyncCapable(true) 
+Computer::GraphicsAccelerator::GraphicsAccelerator() : isGSyncCapable(true), numberOfCUDACores(1200)
 {
     std::cout << "GraphicsAccelerator being constructed" << std::endl;
 }
