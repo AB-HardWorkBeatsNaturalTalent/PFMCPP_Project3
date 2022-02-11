@@ -366,6 +366,22 @@ struct AudioInterface
     //3) display input levels on GUI
     void displayInputLevelsOnGUI(float inputLevel1, float inputLevel2);//input to function is audio line in levels
 
+    void changeInterfaceColor(std::string colorTo)
+    {
+        color = colorTo;
+        for(int  i = numberOfInputs; i > 0 ; --i)
+        {
+            std::cout << color << std::endl;
+            if(i%2 == 0)
+            {
+                color = "red";
+                continue;
+            }
+            color = colorTo;
+        }
+        std::cout << "end color is: " << color << std::endl;
+    }
+
 };
 AudioInterface::AudioInterface() : numberOfInputs(2), numberOfOutputs(4)
 {
