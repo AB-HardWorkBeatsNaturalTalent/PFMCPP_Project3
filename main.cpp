@@ -238,8 +238,13 @@ struct Dog
         if(newLengthInCm < hairLengthInCM)
         {
             amountCutOff = hairLengthInCM - newLengthInCm;
+            std::cout << "amount cut off:" << amountCutOff << std::endl;
+            while(amountCutOff > 0)    
+            {
+                bark();
+                amountCutOff--;
+            }
         }
-        std::cout << "amount cut off:" << amountCutOff << std::endl;
         return amountCutOff;
     }
     /*1) add some new member functions to EACH of your types.     
