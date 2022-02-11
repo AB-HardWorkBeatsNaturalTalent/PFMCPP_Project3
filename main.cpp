@@ -247,11 +247,6 @@ struct Dog
         }
         return amountCutOff;
     }
-    /*1) add some new member functions to EACH of your types.     
-    2) inside these new member functions, use while() and for() loops to do something interesting 
-         a) example: have a loop that modifies a member variable of some object created outside the loop.
-         b) when that member variable reaches a certain threshold, return it mid-loop.
-         c) maybe use function parameters to control the starting value of that member variable or control the threshold*/
 
     Dog();
     //1) bark
@@ -301,12 +296,32 @@ struct Teacher
     Teacher();
     //1) give lecture
     void giveLecture();
-
     //2) private tutoring
     // returns the amount of money made from private tutoring
     float privateTutoring(float hourlyRate, int numberOfHours = 1); //input hourly rate and number of hours
     //3) assign homework
     void assignHomework(std::string homeworkAssignment);//input a string representation of the homework
+    /*1) add some new member functions to EACH of your types.     
+    2) inside these new member functions, use while() and for() loops to do something interesting 
+         a) example: have a loop that modifies a member variable of some object created outside the loop.
+         b) when that member variable reaches a certain threshold, return it mid-loop.
+         c) maybe use function parameters to control the starting value of that member variable or control the threshold*/
+    void sayMeaninglessNumbers(int startingWith)
+    {
+        if(startingWith > 0)
+        {        
+            int numberOfStuff = numberOfClassesTaught * startingWith;
+            std::cout << "I have taught " << numberOfStuff << "things" << std::endl;
+            std::cout << "that is " ;
+            while(startingWith > 0)
+            {
+                std::cout << startingWith--;
+            }
+            std::cout << std::endl;
+            return;
+        }
+        std::cout << "i have only taught 1 thing" << std::endl;        
+    }
 };
 
 Teacher::Teacher() : domainExpertise("philosophy")
