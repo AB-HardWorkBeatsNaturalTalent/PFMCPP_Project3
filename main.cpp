@@ -495,6 +495,20 @@ struct Tuning
     void setAllStringTunings(int string1, int string2, int string3, int string4, int string5);
     //input a midi pitch value for each string
     //sets the Tuning member variables
+
+
+    void sayTheMidiTunings()
+    {
+        std::cout << "tuning is" << string1MidiTuning << std::endl;
+        std::cout << "tuning is" << string2MidiTuning << std::endl;
+        std::cout << "tuning is" << string3MidiTuning << std::endl;
+        std::cout << "tuning is" << string4MidiTuning << std::endl;
+        std::cout << "tuning is" << string5MidiTuning << std::endl;
+
+        for(int i = 1; i < 6; i++){
+            std::cout << i << std::endl;
+        }
+    }
 };
 Tuning::Tuning() : string1MidiTuning(1), string2MidiTuning(2), string3MidiTuning(3), string4MidiTuning(4), string5MidiTuning(10)
 {
