@@ -556,6 +556,7 @@ struct GuitarString
 
     void vibrationsForHz(int Hz)
     {
+        std::cout << "imagine all this spread evenly over 1 second: ";
         for(int i = 0; i < Hz; i++)
         {
             std::cout << "gauge " << gauge << " is vibrating";
