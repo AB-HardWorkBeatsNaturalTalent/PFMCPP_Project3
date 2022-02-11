@@ -179,13 +179,6 @@ struct Computer
         return memoryTopology;
     }
 
-
-/*1) add some new member functions to EACH of your types.     
- 2) inside these new member functions, use while() and for() loops to do something interesting 
-         a) example: have a loop that modifies a member variable of some object created outside the loop.
-         b) when that member variable reaches a certain threshold, return it mid-loop.
-         c) maybe use function parameters to control the starting value of that member variable or control the threshold*/
-
 };
 Computer::Computer() : numberOfProcessorCores(5), memoryInGB(32), motherboardType("micro ATX")
 {
@@ -238,6 +231,22 @@ struct Dog
     float lengthOfTailInCm;
     //5) breed (std::string)
     std::string breed;
+
+    float cutHairToNewLength(float newLengthInCm)
+    {
+        float amountCutOff = 0.0f;
+        if(newLengthInCm < hairLengthInCM)
+        {
+            amountCutOff = hairLengthInCM - newLengthInCm;
+        }
+        std::cout << "amount cut off:" << amountCutOff << std::endl;
+        return amountCutOff;
+    }
+    /*1) add some new member functions to EACH of your types.     
+    2) inside these new member functions, use while() and for() loops to do something interesting 
+         a) example: have a loop that modifies a member variable of some object created outside the loop.
+         b) when that member variable reaches a certain threshold, return it mid-loop.
+         c) maybe use function parameters to control the starting value of that member variable or control the threshold*/
 
     Dog();
     //1) bark
