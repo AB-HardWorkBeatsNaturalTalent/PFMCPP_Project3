@@ -608,6 +608,17 @@ struct Pickup
     //3) buck the hum
     float buckTheHum(float inputWithHum);//transforms inputWithHum to output with hum bucked.
 
+    int thingsToPickup = 500;
+
+    int pickupThings(int howManyThings)
+    {
+        while(--howManyThings > 0)
+        {
+            std::cout << "picking up thing" << std::endl;
+        }
+        return howManyThings;
+    }
+
 };
 Pickup::Pickup()
 {
