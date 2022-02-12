@@ -949,9 +949,10 @@ int main()
     guitar.soundANote(3, 9);
     guitar.tuneAString(tuning, guitarString, 12);
     std::cout << "guitar tone adjusted" << guitar.adjustTone(fingerboard, 1.09f) << std::endl;
+    guitar.giveGuitarTuneup();
 
     std::cout << "good to go!" << std::endl;
 
-    guitar.giveGuitarTuneup();
+
     
 }
