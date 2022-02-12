@@ -311,7 +311,7 @@ struct Teacher
             std::cout << "that is " ;
             while(startingWith > 0)
             {
-                std::cout << startingWith--;
+                std::cout << --startingWith;
             }
             std::cout << std::endl;
             return;
@@ -427,7 +427,7 @@ struct Fingerboard
     {
         int temp = 0;
         int strings = 3;
-        for(int i = 0; i < strings; i++)
+        for(int i = 0; i < strings; ++i)
         {
             if(i == 0){
                 temp = fretANote(string1, fret1);
@@ -501,7 +501,7 @@ struct Tuning
         std::cout << "tuning is" << string4MidiTuning << std::endl;
         std::cout << "tuning is" << string5MidiTuning << std::endl;
 
-        for(int i = 1; i < 6; i++){
+        for(int i = 0; i < 6; ++i){
             std::cout << i << std::endl;
         }
     }
@@ -553,7 +553,7 @@ struct GuitarString
     void vibrationsForHz(int Hz)
     {
         std::cout << "imagine all this spread evenly over 1 second: ";
-        for(int i = 0; i < Hz; i++)
+        for(int i = 0; i < Hz; ++i)
         {
             std::cout << "gauge " << gauge << " is vibrating";
         }
@@ -806,8 +806,6 @@ struct Guitar
         tuning.setAllStringTunings(25, 35, 45, 55, 65);
         toneControl.changeToneAlgorithm();
         fingerboard.fretThreeNotes(1,2,3,4,5,5);
-
-        
     }
 
 };
