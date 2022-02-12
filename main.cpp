@@ -301,11 +301,7 @@ struct Teacher
     float privateTutoring(float hourlyRate, int numberOfHours = 1); //input hourly rate and number of hours
     //3) assign homework
     void assignHomework(std::string homeworkAssignment);//input a string representation of the homework
-    /*1) add some new member functions to EACH of your types.     
-    2) inside these new member functions, use while() and for() loops to do something interesting 
-         a) example: have a loop that modifies a member variable of some object created outside the loop.
-         b) when that member variable reaches a certain threshold, return it mid-loop.
-         c) maybe use function parameters to control the starting value of that member variable or control the threshold*/
+
     void sayMeaninglessNumbers(int startingWith)
     {
         if(startingWith > 0)
@@ -862,12 +858,17 @@ int main()
     computerGraphicsAccelerator.setPrice(400.0f);
 
     std::cout << "cuda info: " << computerGraphicsAccelerator.outputCUDAVersionAndCores() << std::endl;
+    computerGraphicsAccelerator.boostTheGraphics();
+    computerGraphicsAccelerator.parallelSpeedIncreaseFactor(16);
 
 //Computer methods
     auto computer = Computer();
     std::cout << "updated graphics: " << computer.updateGraphicsDriver(computerGraphicsAccelerator) << std::endl;
     computer.runMemtest();
     computer.runMultipleProcesses();
+
+    computer.analyzeEnergyConsumption(50000); 
+    computer.memoryTopologyBlocksPerCore();
 
 //Dog methods
     auto dog = Dog();
@@ -932,4 +933,7 @@ int main()
     std::cout << "guitar tone adjusted" << guitar.adjustTone(fingerboard, 1.09f) << std::endl;
 
     std::cout << "good to go!" << std::endl;
+
+
+    
 }
