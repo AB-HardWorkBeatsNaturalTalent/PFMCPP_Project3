@@ -674,10 +674,11 @@ struct ToneControl
             std::cout << "before a while" << toIncrement;
             while(++toIncrement < 100)
             {
+                setToneColors(color11 + toIncrement, color22 + toIncrement, color33 + toIncrement);
                 //do nothing
                 std::cout << "doing nothing but this" << std::endl;
             }
-            std::cout << "after a while" << toIncrement;
+            std::cout << "after a while" << toIncrement;            
         }
 
 
@@ -798,6 +799,25 @@ struct Guitar
     // returns the value of pitch of the tuned string
     //3) sound a note
     void soundANote(int stringNumber, int fretNumber);//play audio through speakers
+
+
+    //give guitar a Tuneup
+    void giveGuitarTuneup()
+    {
+        std::cout << "applying oil: " << fingerboard.requireOil(true);
+        
+        fingerboard.requireNewFrets();
+        
+    //tuning.
+        tuning.setAllStringTunings(25, 35, 45, 55, 65);
+
+    //tonecontrol
+    //tuneup complete   
+
+        fingerboard.fretThreeNotes(1,2,3,4,5,6);
+    }
+
+
 
 };
 
