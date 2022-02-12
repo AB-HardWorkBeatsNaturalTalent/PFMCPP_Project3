@@ -697,11 +697,23 @@ struct ToneControl
     bool isSmoothToTurn = true;
 
     ToneAlgorithm toneAlgorithm;
+    char toneAlgoType = 'A';
+
 
     void changeToneAlgorithm()
     {
-        toneAlgorithm.incrementAndSetColors(30,40,50);
+        if(toneAlgoType == 'A')
+        {
+            toneAlgorithm.incrementAndSetColors(30,40,50);
+            toneAlgoType = 'B';
+        }
+        else
+        {
+            toneAlgoType = 'A';
+            toneAlgorithm.incrementAndSetColors(20,30,52);
+        }        
     }
+
 
     ToneControl();
     //1) set tone level
