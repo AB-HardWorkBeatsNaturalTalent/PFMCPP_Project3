@@ -805,19 +805,11 @@ struct Guitar
     void giveGuitarTuneup()
     {
         std::cout << "applying oil: " << fingerboard.requireOil(true);
-        
         fingerboard.requireNewFrets();
-        
-    //tuning.
         tuning.setAllStringTunings(25, 35, 45, 55, 65);
-
-    //tonecontrol
-    //tuneup complete   
-
-        fingerboard.fretThreeNotes(1,2,3,4,5,6);
+        toneControl.changeToneAlgorithm();
+        fingerboard.fretThreeNotes(1,2,3,4,5,5);
     }
-
-
 
 };
 
