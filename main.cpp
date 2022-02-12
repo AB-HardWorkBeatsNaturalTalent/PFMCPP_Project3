@@ -672,9 +672,10 @@ struct ToneControl
         {
             setToneColors(color11, color22, color33);
             std::cout << "before a while" << toIncrement;
-            while(++toIncrement < 1000000)
+            while(++toIncrement < 100)
             {
                 //do nothing
+                std::cout << "doing nothing but this" << std::endl;
             }
             std::cout << "after a while" << toIncrement;
         }
@@ -695,6 +696,13 @@ struct ToneControl
     //5) is smooth to turn (bool)
     bool isSmoothToTurn = true;
 
+    ToneAlgorithm toneAlgorithm;
+
+    void changeToneAlgorithm()
+    {
+        toneAlgorithm.incrementAndSetColors(30,40,50);
+    }
+
     ToneControl();
     //1) set tone level
     float setToneLevel(float inputLevel, float adjustment); //apply adjustment to the inputlevel
@@ -711,10 +719,12 @@ ToneControl::ToneControl()
 {
     std::cout << "ToneControl being constructed" << std::endl;
 }
+
 ToneControl::ToneAlgorithm::ToneAlgorithm(): color1(10), color2(11), color3(12)
 {
     std::cout << "ToneAlgorithm constructing with upper limit: " <<  upperLimit << "and lower limit: " << lowerLimit <<std::endl;
 }
+
 void ToneControl::ToneAlgorithm::setToneColors(int c1, int c2, int c3)
 {
     std::cout << "tone color set to " << c1 << ", " << c2 << ", " << c3 << std::endl;
