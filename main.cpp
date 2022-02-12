@@ -677,10 +677,8 @@ struct ToneControl
             std::cout << "after a while" << toIncrement;            
         }
 
-
     };
-
-
+    
 
     //1) front pickup tone control setting (float)
     float frontPickupToneControlSetting = 1.0f;
@@ -693,21 +691,20 @@ struct ToneControl
     //5) is smooth to turn (bool)
     bool isSmoothToTurn = true;
 
-    ToneAlgorithm toneAlgorithm;
+    ToneAlgorithm toneAlgorithms;
     char toneAlgoType = 'A';
-
 
     void changeToneAlgorithm()
     {
         if(toneAlgoType == 'A')
         {
-            toneAlgorithm.incrementAndSetColors(30,40,50);
+            toneAlgorithms.incrementAndSetColors(30,40,50);
             toneAlgoType = 'B';
         }
         else
         {
             toneAlgoType = 'A';
-            toneAlgorithm.incrementAndSetColors(20,30,52);
+            toneAlgorithms.incrementAndSetColors(20,30,52);
         }        
     }
 
@@ -722,6 +719,10 @@ struct ToneControl
     //3) auto adjust
     bool autoAdjust();//returns true if autoAdjust is turned on; else false 
 
+    void useToneAlgorithm()
+    {
+        changeToneAlgorithm();
+    }
 };
 
 ToneControl::ToneControl() 
@@ -805,6 +806,8 @@ struct Guitar
         tuning.setAllStringTunings(25, 35, 45, 55, 65);
         toneControl.changeToneAlgorithm();
         fingerboard.fretThreeNotes(1,2,3,4,5,5);
+
+        
     }
 
 };
@@ -876,11 +879,15 @@ int main()
     dog.run();
     std::cout <<"successful fetch? :: " << dog.fetch(" a small baby child ") << std::endl;
 
+    dog.cutHairToNewLength(.09f);
+
 //Teacher methods
     auto teacher = Teacher();
     teacher.assignHomework("lesson 2");
     teacher.giveLecture();    
     std::cout << "money made: " << teacher.privateTutoring(50.00f) << std::endl;
+
+    teacher.sayMeaninglessNumbers(9001);
 
 //AudioInterface methods
     auto audioInterface = AudioInterface();
@@ -888,17 +895,23 @@ int main()
     audioInterface.muteOutput();    
     std::cout << "level adjusted to: " << audioInterface.adjustLevels(.2f) << std::endl;
 
+    audioInterface.changeInterfaceColor("blue");
+
 //Fingerboard methods
     auto fingerboard = Fingerboard();    
     fingerboard.requireNewFrets();
     fingerboard.requireOil(true);
     std::cout << "midi of fretted note: " << fingerboard.fretANote(1, 6) << std::endl;
 
+    fingerboard.fretThreeNotes(10,10,12,20,30,40);
+
 //Pickup methods
     auto pickup = Pickup();
     pickup.bypass(true);
     pickup.buckTheHum(23.9f);    
     std::cout << "fluxfield is: "  << pickup.senseFluxField() << std::endl;
+
+    pickup.pickupThings(1199);
 
 
 //Tuning methods
@@ -907,12 +920,15 @@ int main()
     tuning.tuneStringDown();
     std::cout << "up-tuned string pitch" << tuning.tuneStringUp() << std::endl;
 
+    tuning.sayTheMidiTunings();
+
 //GuitarString methods
     auto guitarString = GuitarString();
     guitarString.becomeOldAndDirty();
     guitarString.requireRetuning();    
     std::cout << "did it snap: " << guitarString.snap() << std::endl;
 
+    guitarString.vibrationsForHz(120);
 
 //ToneControl methods
     auto toneControl = ToneControl();  
@@ -920,11 +936,15 @@ int main()
     toneControl.requireRepair();
     std::cout << "auto adjusted tone: "  << toneControl.autoAdjust() << std::endl;
 
+    toneControl.useToneAlgorithm();
+
 //ToneAlgorithm methods
-    auto toneAlgorithm = ToneControl::ToneAlgorithm();
-    toneAlgorithm.setUpperLimit(1.09f);
-    toneAlgorithm.setToneColors(1, 2, 3);
-    std::cout << "lower limit set to:" << toneAlgorithm.setLowerLimit(.02f) << std::endl;
+    auto toneAlgorithmx = ToneControl::ToneAlgorithm();
+    toneAlgorithmx.setUpperLimit(1.09f);
+   
+    std::cout << "lower limit set to:" << toneAlgorithmx.setLowerLimit(.02f) << std::endl;
+
+    toneAlgorithmx.setLowerLimit(.0003f);
 
 //Guitar methods
     auto guitar = Guitar();
@@ -934,6 +954,6 @@ int main()
 
     std::cout << "good to go!" << std::endl;
 
-
+    guitar.giveGuitarTuneup();
     
 }
