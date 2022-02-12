@@ -665,6 +665,21 @@ struct ToneControl
         //3 set lower limit
         bool setLowerLimit(float lowerLimit = 0.0f);
         //return true if success, else false;
+        
+        int toIncrement = 0;
+
+        void incrementAndSetColors(int color11, int color22, int color33)
+        {
+            setToneColors(color11, color22, color33);
+            std::cout << "before a while" << toIncrement;
+            while(++toIncrement < 1000000)
+            {
+                //do nothing
+            }
+            std::cout << "after a while" << toIncrement;
+        }
+
+
     };
 
 
