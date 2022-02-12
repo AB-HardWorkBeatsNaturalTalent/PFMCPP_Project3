@@ -134,7 +134,7 @@ struct Computer
     //4) motherboard type (std::string)
     std::string motherboardType;
     //5) audio interface name (std::string)
-    std::string audioInterfaceName = "Apogee";
+    std::string audioInterfaceName;
 
     Computer();
     //1) run multiple processes 
@@ -180,7 +180,7 @@ struct Computer
     }
 
 };
-Computer::Computer() : numberOfProcessorCores(5), memoryInGB(32), motherboardType("micro ATX")
+Computer::Computer() : numberOfProcessorCores(5), memoryInGB(32), motherboardType("micro ATX"), audioInterfaceName("ableton")
 {
     std::cout << "Computer being constructed" << std::endl; 
 }
@@ -860,7 +860,7 @@ int main()
 
     std::cout << "cuda info: " << computerGraphicsAccelerator.outputCUDAVersionAndCores() << std::endl;
     computerGraphicsAccelerator.boostTheGraphics();
-    computerGraphicsAccelerator.parallelSpeedIncreaseFactor(16);
+    computerGraphicsAccelerator.parallelSpeedIncreaseFactor(4);
 
 //Computer methods
     auto computer = Computer();
@@ -868,7 +868,7 @@ int main()
     computer.runMemtest();
     computer.runMultipleProcesses();
 
-    computer.analyzeEnergyConsumption(50000); 
+    computer.analyzeEnergyConsumption(50); 
     computer.memoryTopologyBlocksPerCore();
 
 //Dog methods
@@ -885,7 +885,7 @@ int main()
     teacher.giveLecture();    
     std::cout << "money made: " << teacher.privateTutoring(50.00f) << std::endl;
 
-    teacher.sayMeaninglessNumbers(9001);
+    teacher.sayMeaninglessNumbers(9);
 
 //AudioInterface methods
     auto audioInterface = AudioInterface();
@@ -909,7 +909,7 @@ int main()
     pickup.buckTheHum(23.9f);    
     std::cout << "fluxfield is: "  << pickup.senseFluxField() << std::endl;
 
-    pickup.pickupThings(1199);
+    pickup.pickupThings(19);
 
 
 //Tuning methods
