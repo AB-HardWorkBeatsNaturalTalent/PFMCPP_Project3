@@ -99,16 +99,23 @@ struct Computer
         //output cuda version and number of cores
         std::string outputCUDAVersionAndCores();//returns a string representing the cuda capbility 
 
-        void boostTheGraphics()
+        void boostTheGraphics(int multiply)
         {
-            int testValue = 0;
-            while(isGSyncCapable)
+            if(multiply >0)
             {
-                testValue = 1;
-                std::cout << "Boosted!" << std::endl;
-                break;
+                int testValue = 0;
+                while(multiply > 0)
+                {
+                    ++testValue;
+                    std::cout << "Boosted!" << std::endl;
+                    --multiply;
+                }
+                std::cout << "Out of Boost" << std::endl;
             }
-            std::cout << "Out of Boost" << std::endl;
+            else
+            {
+                std::cout << "zero or negative boost only" << std::endl;
+            }
         } // part 5 begin.
         int parallelSpeedIncreaseFactor(int desiredFactor)
         {
@@ -859,7 +866,7 @@ int main()
     computerGraphicsAccelerator.setPrice(400.0f);
 
     std::cout << "cuda info: " << computerGraphicsAccelerator.outputCUDAVersionAndCores() << std::endl;
-    computerGraphicsAccelerator.boostTheGraphics();
+    computerGraphicsAccelerator.boostTheGraphics(3);
     computerGraphicsAccelerator.parallelSpeedIncreaseFactor(4);
 
 //Computer methods
