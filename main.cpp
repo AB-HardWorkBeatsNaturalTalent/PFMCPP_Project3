@@ -120,7 +120,7 @@ struct Computer
         int parallelSpeedIncreaseFactor(int desiredFactor)
         {
             int totalCoresProcessing = 0;
-            for(int i = 0; i <= int(price); ++i)
+            for(int i = 0; i <= maxSLICapability; ++i)
             {
                 std::cout << "boosted processor core block i: " << i*desiredFactor << std::endl;
                 totalCoresProcessing += i*desiredFactor;
@@ -168,7 +168,7 @@ struct Computer
     std::string memoryTopologyBlocksPerCore()
     {
         //number of cores & number of GB RAM
-        auto memoryPerCore = memoryInGB / static_cast<double>(numberOfProcessorCores);
+        int memoryPerCore = memoryInGB / numberOfProcessorCores;
         
         std::string memoryTopology = "";        
         while(numberOfProcessorCores > 0)
@@ -227,7 +227,6 @@ Thing 2) Dog
  */
 struct Dog
 {
-
     //1) hair color (std::string)
     std::string hairColor;
     //2) hair length in cm (float)
@@ -249,7 +248,7 @@ struct Dog
             while(amountCutOff > 0)    
             {
                 bark();
-                amountCutOff--;
+                --amountCutOff;
             }
         }
         return amountCutOff;
@@ -318,7 +317,9 @@ struct Teacher
             std::cout << "that is " ;
             while(startingWith > 0)
             {
-                std::cout << --startingWith;
+                std::cout << "before --startingWith: " << startingWith << std::endl;
+                std::cout << "now firing: " << --startingWith;
+                std::cout << "after --startingWith: " << startingWith << std::endl;
             }
             std::cout << std::endl;
             return;
@@ -436,7 +437,8 @@ struct Fingerboard
         int strings = 3;
         for(int i = 0; i < strings; ++i)
         {
-            if(i == 0){
+            if(i == 0)
+            {
                 temp = fretANote(string1, fret1);
             }
             else if(i == 1)
@@ -508,7 +510,8 @@ struct Tuning
         std::cout << "tuning is" << string4MidiTuning << std::endl;
         std::cout << "tuning is" << string5MidiTuning << std::endl;
 
-        for(int i = 0; i < 6; ++i){
+        for(int i = 0; i < 6; ++i)
+        {
             std::cout << i << std::endl;
         }
     }
@@ -675,11 +678,12 @@ struct ToneControl
         {
             setToneColors(color11, color22, color33);
             std::cout << "before a while" << toIncrement;
-            while(++toIncrement < 100)
+            while(toIncrement < 10)
             {
                 setToneColors(color11 + toIncrement, color22 + toIncrement, color33 + toIncrement);
                 //do nothing
                 std::cout << "doing nothing but this" << std::endl;
+                ++toIncrement;
             }
             std::cout << "after a while" << toIncrement;            
         }
