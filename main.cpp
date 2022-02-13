@@ -181,7 +181,7 @@ struct Computer
                 memoryTopology += std::to_string(numberOfProcessorCores);
                 memoryTopology += "\n"; 
             }
-            numberOfProcessorCores--;
+            numberOfProcessorCores--; FIXME: use pre-decrement
         }
         return memoryTopology;
     }
@@ -318,7 +318,7 @@ struct Teacher
             while(startingWith > 0)
             {
                 std::cout << "before --startingWith: " << startingWith << std::endl;
-                std::cout << "now firing: " << --startingWith;
+                std::cout << "now firing: " << --startingWith; FIXME: separate math operations from usage
                 std::cout << "after --startingWith: " << startingWith << std::endl;
             }
             std::cout << std::endl;
@@ -376,7 +376,7 @@ struct AudioInterface
         for(int  i = numberOfInputs; i > 0 ; --i)
         {
             std::cout << color << std::endl;
-            if(i%2 == 0)
+            if(i%2 == 0) FIXME: add space around `%` to improve code readability
             {
                 color = "red";
                 continue;
@@ -465,7 +465,9 @@ int Fingerboard::fretANote(int stringNumber, int fretNumber)
 }
 std::string Fingerboard::requireOil(bool required)
 {
-    if(required) return "yes";
+    if(required) 
+        return "yes";
+
     return "no";    
 }
 bool Fingerboard::requireNewFrets()
@@ -618,7 +620,7 @@ struct Pickup
 
     int pickupThings(int howManyThings)
     {
-        while(--howManyThings > 0)
+        while(--howManyThings > 0) FIXME: Separate math operations from comparison operations. 
         {
             std::cout << "picking up thing" << std::endl;
         }
