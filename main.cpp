@@ -687,7 +687,6 @@ struct ToneControl
             }
             std::cout << "after a while" << toIncrement;            
         }
-
     };
     
 
