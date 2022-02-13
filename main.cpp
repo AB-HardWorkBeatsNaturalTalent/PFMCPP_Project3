@@ -181,7 +181,7 @@ struct Computer
                 memoryTopology += std::to_string(numberOfProcessorCores);
                 memoryTopology += "\n"; 
             }
-            numberOfProcessorCores--; FIXME: use pre-decrement
+            --numberOfProcessorCores;
         }
         return memoryTopology;
     }
@@ -318,7 +318,9 @@ struct Teacher
             while(startingWith > 0)
             {
                 std::cout << "before --startingWith: " << startingWith << std::endl;
-                std::cout << "now firing: " << --startingWith; FIXME: separate math operations from usage
+                /*
+                the point of sayMeaninglessNumbers is to help illustrate where the value is changing. which is why i specifically included that part in the cout statement.*/
+                std::cout << "now firing: " << --startingWith; 
                 std::cout << "after --startingWith: " << startingWith << std::endl;
             }
             std::cout << std::endl;
@@ -376,7 +378,7 @@ struct AudioInterface
         for(int  i = numberOfInputs; i > 0 ; --i)
         {
             std::cout << color << std::endl;
-            if(i%2 == 0) FIXME: add space around `%` to improve code readability
+            if(i % 2 == 0)
             {
                 color = "red";
                 continue;
@@ -620,9 +622,10 @@ struct Pickup
 
     int pickupThings(int howManyThings)
     {
-        while(--howManyThings > 0) FIXME: Separate math operations from comparison operations. 
+        while(howManyThings > 0)
         {
             std::cout << "picking up thing" << std::endl;
+            --howManyThings;
         }
         return howManyThings;
     }
