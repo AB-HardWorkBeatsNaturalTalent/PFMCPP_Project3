@@ -317,11 +317,8 @@ struct Teacher
             std::cout << "that is " ;
             while(startingWith > 0)
             {
-                std::cout << "before --startingWith: " << startingWith << std::endl;
-                /*
-                the point of sayMeaninglessNumbers is to help illustrate where the value is changing. which is why i specifically included that part in the cout statement.*/
-                std::cout << "now firing: " << --startingWith; 
-                std::cout << "after --startingWith: " << startingWith << std::endl;
+                --startingWith;
+                std::cout << "so interesting: " << startingWith << std::endl;
             }
             std::cout << std::endl;
             return;
